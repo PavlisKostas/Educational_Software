@@ -9,7 +9,7 @@ namespace Educational_Software.Models
     internal class User
     {
         private int id;
-        public string name { get; }
+        public string name { get; } 
         public string lastname { get; }
         public string email { get; }
         public string password { get; }
@@ -24,8 +24,8 @@ namespace Educational_Software.Models
 
         public List<Answer> get_answers()
         {
-            DatabaseHandler db = new DatabaseHandler();
-            List<Answer> answers = db.get_answers(id);
+            //DatabaseHandler db = new DatabaseHandler();
+            List<Answer> answers = DatabaseHandler.get_answers(id);
             return answers;
         }
         public Answer answer(int section, int question, int time, float rating)

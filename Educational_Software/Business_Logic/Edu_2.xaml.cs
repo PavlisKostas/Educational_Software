@@ -4,6 +4,7 @@ using Microsoft.UI.Xaml.Controls.Primitives;
 using Microsoft.UI.Xaml.Data;
 using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Media;
+using Microsoft.UI.Xaml.Media.Imaging;
 using Microsoft.UI.Xaml.Navigation;
 using System;
 using System.Collections.Generic;
@@ -29,7 +30,7 @@ namespace Educational_Software.Navigation_UI_Pages
             this.InitializeComponent();
 
             
-            string videoPath = Path.Combine(Environment.CurrentDirectory, "Assets", "video.mp4");
+            string videoPath = Path.Combine(Environment.CurrentDirectory, "Assets", "video_v2.mp4");
 
             
             VideoPlayer.Source = MediaSource.CreateFromUri(new Uri(videoPath));
@@ -44,7 +45,6 @@ namespace Educational_Software.Navigation_UI_Pages
             if (VideoPlayer.MediaPlayer != null)
             {
                 VideoPlayer.MediaPlayer.Pause();
-                //VideoPlayer.MediaPlayer.PlaybackSession.Position = TimeSpan.Zero;
                 VideoPlayer.MediaPlayer.Dispose();
             }
         }

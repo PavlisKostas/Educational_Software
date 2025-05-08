@@ -7,6 +7,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Threading.Tasks;
+using Educational_Software.Models;
 using Educational_Software.Navigation_UI_Pages;
 using Microsoft.UI;
 using Microsoft.UI.Windowing;
@@ -45,6 +46,8 @@ namespace Educational_Software
 
         bool logged_in = false;
 
+        Models.User user = null;
+
 
         public MainWindow()
         {
@@ -63,17 +66,38 @@ namespace Educational_Software
             AppWindow.Title = "Educational Software";
             AppWindow.SetIcon("Assets/light_house.ico");
 
+            System.Diagnostics.Debug.WriteLine("going to create tables");
+
+            DatabaseHandler.CreateTables();
 
 
         }
 
         private void Log_in(object sender, RoutedEventArgs e)
         {
-            welcome_screen.Visibility = Visibility.Collapsed;
-            main_screen.Visibility = Visibility.Visible;
-            sign_out_button.Visibility = Visibility.Visible;
+           
 
-            logged_in = true;
+            Debug.WriteLine("going to sign in");
+
+            Debug.WriteLine(email_obj.Text);
+
+            user = Models.Server.sign_in(username_sign_in.Text.ToString(), password_sign_in.Password.ToString());
+
+            if (user != null)
+            {
+                Debug.WriteLine("successful sign in");
+                welcome_screen.Visibility = Visibility.Collapsed;
+                main_screen.Visibility = Visibility.Visible;
+                sign_out_button.Visibility = Visibility.Visible;
+                logged_in = true;
+                Main_TeachingTip.IsOpen = false;
+            }
+            else
+            {
+                Debug.WriteLine("unsuccessful sign in");
+                logged_in = false;
+                Main_TeachingTip.IsOpen = true;
+            }
 
         }
 
@@ -127,7 +151,13 @@ namespace Educational_Software
 
         private void Sign_up(object sender, RoutedEventArgs e)
         {
-            
+            Debug.WriteLine("going to sign up");
+
+            user = Models.Server.sign_up(name_obj.Text, surname_obj.Text, email_obj.Text, password_obj.Password);
+
+            Debug.WriteLine("successful signup going to sign in");
+
+            Main_TeachingTip.IsOpen = false;
         }
 
 

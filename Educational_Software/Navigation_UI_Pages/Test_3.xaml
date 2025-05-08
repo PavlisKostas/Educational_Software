@@ -9,6 +9,30 @@
     mc:Ignorable="d">
 
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Spacing="8">
+            <StackPanel Orientation="Horizontal" Spacing="15" HorizontalAlignment="Center" Margin="0, 15,0,0">
+                <FontIcon Glyph="&#xEE56;" FontSize="42"/>
+                <TextBlock Text="Τεστ 3ης Ενότητας" FontSize="25" FontWeight="SemiBold" VerticalAlignment="Center"/>
+            </StackPanel>
+            <TextBlock Text="Ερωτήσεις για την Ενότητα 3 και όλες τις προηγούμενες ενότητες" FontSize="16" FontWeight="SemiBold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </StackPanel>
+
+        <!-- Temporary Code for the Demo Only -->
+
+        <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="15">
+            <FontIcon Glyph="&#xE822;" FontSize="110" HorizontalAlignment="Center"/>
+            <TextBlock Text="Under Construction" FontSize="25" FontWeight="SemiBold" HorizontalAlignment="Center"/>
+
+        </StackPanel>
+
+
 
     </Grid>
 </Page>

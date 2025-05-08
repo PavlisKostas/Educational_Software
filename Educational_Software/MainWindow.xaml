@@ -15,7 +15,7 @@
           <RowDefinition Height="*"/>  
       </Grid.RowDefinitions>
 
-        <StackPanel  Grid.Row="0" Orientation="Horizontal" Visibility="Visible" Spacing="15" Height="30"  x:Name="TitleBar" HorizontalAlignment="Stretch"  VerticalAlignment="Top" Margin="0, 0, 0, 2">
+        <StackPanel  Grid.Row="0" Orientation="Horizontal" Visibility="Visible" Spacing="15" Height="30"  x:Name="TitleBar" HorizontalAlignment="Stretch"  VerticalAlignment="Top" Margin="0, 0, 0, 7">
             <ImageIcon Height="18" Width="18" Margin="15, 0, 0, 0" VerticalAlignment="Center" HorizontalAlignment="Center" Source="Assets/light_house.png"/>
             <TextBlock VerticalAlignment="Center" Text="Educational Software" />
             <TextBlock Visibility="Visible" VerticalAlignment="Center" Text="PREVIEW" Foreground="Gray" />
@@ -50,7 +50,7 @@
                 <StackPanel Orientation="Vertical" Spacing="6" Margin="0, 10, 0 ,0" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <TextBlock Text="Σύνδεση" FontSize="25" FontWeight="SemiBold" HorizontalAlignment="Center" Margin="0,0,0, 0"/>
                     <FontIcon Glyph="&#xE716;" HorizontalAlignment="Center" FontSize="50" Margin="0,20,0, 20"/>
-                    <TextBlock  Text="Ψευδώνυμο"/>
+                    <TextBlock  Text="Email"/>
                     <TextBox x:Name="username_sign_in" Width="300"/>
                     <TextBlock Text="Κωδικός" Margin="0, 5, 0,0"/>
                     <PasswordBox  x:Name="password_sign_in" Width="300"/>
@@ -86,13 +86,14 @@
 
                         <!-- <TextBlock Text="Συμπληρώστε όλα τα πεδία" FontWeight="SemiBold" HorizontalAlignment="Center" Margin="0,0,0, 15"/> -->
                         <TextBlock Text="Email" Margin="0, 10, 0,0" Width="300"/>
-                        <TextBox x:Name="email_obj" />
-                        <TextBlock Text="Όνομα" Margin="0, 10, 0,0"/>
-                        <TextBox x:Name="name_obj"/>
-                        <TextBlock Text="Επώνυμο" Margin="0, 10, 0,0"/>
-                        <TextBox x:Name="surname_obj"/>
+                        <TextBox x:Name="email_obj" PlaceholderText="user@example.com"/>
                         <TextBlock Text="Κωδικός" Margin="0, 10, 0,0" />
-                        <PasswordBox x:Name="password_obj"/>
+                        <PasswordBox x:Name="password_obj" PlaceholderText="Εισάγετε έναν ισχυρό κωδικό"/>
+                        <TextBlock Text="Όνομα" Margin="0, 10, 0,0"/>
+                        <TextBox x:Name="name_obj" PlaceholderText="π.χ. Γιώργος"/>
+                        <TextBlock Text="Επώνυμο" Margin="0, 10, 0,0"/>
+                        <TextBox x:Name="surname_obj" PlaceholderText="π.χ. Παπαδόπουλος"/>
+                        
 
                         <Button HorizontalAlignment="Center" Click="Sign_up_semi" Style="{StaticResource AccentButtonStyle}"  Margin="0, 25, 0 ,10">
 
@@ -114,7 +115,7 @@
                         <RadioButtons x:Name="sign_up_radio_2" Header="Πού βρίσκεται η Αλεξανδρούπολη;" MaxColumns="3">
                             <RadioButton Content="Νότια Ελλάδα" />
                             <RadioButton Content="Βόρεια Ελλάδα" />
-                            <RadioButton Content="Κεντρίκή Ελλάδα" />
+                            <RadioButton Content="Κεντρική Ελλάδα" />
                         </RadioButtons>
                         <RadioButtons x:Name="sign_up_radio_3" Header="Τι είναι η Αλεξανδρούπολη;" MaxColumns="3">
                             <RadioButton Content="Πόλη" />
@@ -165,7 +166,7 @@
             <Button x:Name="sign_out_button" Visibility="Collapsed" Content="Αποσύνδεση" Margin="0, 0, 17, 7" Height="30" FontSize="12" FontWeight="SemiBold" Click="Sign_out" HorizontalAlignment="Right"/>
                 
 
-            <NavigationView x:Name="navigation_element" SelectionChanged="nv_SelectionChanged" Grid.Row="1" IsBackButtonVisible="Collapsed" IsSettingsVisible="False" IsPaneVisible="True" >
+            <NavigationView x:Name="navigation_element" SelectionChanged="nv_SelectionChanged" Grid.Row="1" IsBackButtonVisible="Collapsed" IsSettingsVisible="False" IsPaneVisible="True" IsPaneToggleButtonVisible="False" >
                 <NavigationView.MenuItems>
                     
                     <NavigationViewItem x:Name="home_nav" Icon="Home" Content="Αρχική" Tag="start" IsSelected="True"/>
@@ -254,9 +255,9 @@
                 </Frame>
             </NavigationView>
 
-            <TeachingTip x:Name="TeachingTip" x:FieldModifier="internal"
+            <TeachingTip x:Name="Main_TeachingTip" x:FieldModifier="internal"
                    Title="Αποτυχία σύνδεσης"
-                   Subtitle="Το Username ή/και το Password είναι λανθασμένα. Προσπάθησε ξανά !"
+                   Subtitle="Το Email ή/και το Password είναι λανθασμένα. Προσπάθησε ξανά !"
                    HorizontalContentAlignment="Center"
                    PreferredPlacement="Auto"
                    PlacementMargin="20"
