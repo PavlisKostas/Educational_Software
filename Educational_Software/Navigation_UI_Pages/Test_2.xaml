@@ -24,13 +24,142 @@
             <TextBlock Text="Ερωτήσεις για την Ενότητα 2 και όλες τις προηγούμενες ενότητες" FontSize="16" FontWeight="SemiBold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </StackPanel>
 
-        <!-- Temporary Code for the Demo Only -->
+        <ScrollViewer Grid.Row="1" ZoomMode="Disabled"
+        IsTabStop="True" IsVerticalScrollChainingEnabled="True"  
+        HorizontalAlignment="Stretch" VerticalAlignment="Center"  
+        HorizontalScrollMode="Disabled" HorizontalScrollBarVisibility="Disabled"  
+        VerticalScrollMode="Enabled" VerticalScrollBarVisibility="Auto"
+        Margin="40, 8, 40, 8" Visibility="Visible">
 
-        <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="15">
-            <FontIcon Glyph="&#xE822;" FontSize="110" HorizontalAlignment="Center"/>
-            <TextBlock Text="Under Construction" FontSize="25" FontWeight="SemiBold" HorizontalAlignment="Center"/>
+            <StackPanel Spacing="50" Margin="0, 0, 17, 0">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
 
+
+                    <FontIcon Glyph="&#xEADF;" FontSize="60" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0, 0, 25 ,0" />
+                    <Border Grid.Column="1" CornerRadius="12" BorderThickness="1" BorderBrush="YellowGreen" Padding="15" Background="LightGoldenrodYellow" MinHeight="140">
+
+                        <StackPanel Spacing="5" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <TextBlock Text="Ερώτηση Πολλαπλής Επιλογής" FontWeight="SemiBold" FontSize="16" Margin="0, 0, 0, 8" HorizontalAlignment="Center"/>
+                            <StackPanel x:Name="question_1_1" Visibility="Visible">
+                                <TextBlock Text="Ερώτηση για την Αλεξανδρούπολη... Ποια απάντηση είναι σωστή ;" HorizontalAlignment="Center"/>
+                                <RadioButtons x:Name="question_1_1_radio" MaxColumns="4" HorizontalAlignment="Center" >
+                                    <RadioButton Content="Απάντηση 1" />
+                                    <RadioButton Content="Απάντηση 2" />
+                                    <RadioButton Content="Απάντηση 3" />
+                                    <RadioButton Content="Απάντηση 4" />
+                                </RadioButtons>
+                            </StackPanel>
+                            <StackPanel x:Name="question_1_2" Visibility="Collapsed">
+                                <TextBlock Text="Ερώτηση για την Αλεξανδρούπολη... Ποια απάντηση είναι σωστή ;" HorizontalAlignment="Center"/>
+                                <RadioButtons x:Name="question_1_2_radio" MaxColumns="4" HorizontalAlignment="Center" >
+                                    <RadioButton Content="Απάντηση 1" />
+                                    <RadioButton Content="Απάντηση 2" />
+                                    <RadioButton Content="Απάντηση 3" />
+                                    <RadioButton Content="Απάντηση 4" />
+                                </RadioButtons>
+                            </StackPanel>
+                        </StackPanel>
+
+                    </Border>
+                </Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+
+                    <FontIcon Glyph="&#xEADF;" FontSize="60" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0, 0, 25 ,0" />
+                    <Border Grid.Column="1" CornerRadius="12" BorderThickness="1" BorderBrush="YellowGreen" Padding="15" Background="LightGoldenrodYellow" MinHeight="140">
+
+                        <StackPanel Spacing="5" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <TextBlock Text="Ερώτηση Σωστού/Λάθους" FontWeight="SemiBold" FontSize="16" Margin="0, 0, 0, 8" HorizontalAlignment="Center"/>
+                            <StackPanel>
+                                <TextBlock x:Name="question_2_1_text"  Text="Η Αλεξανδρούπολη βρίσκεται στις Κυκλάδες ;" HorizontalAlignment="Center" Visibility="Visible"/>
+                                <TextBlock x:Name="question_2_2_text"  Text="Η Αλεξανδρούπολη βρίσκεται στις Κυκλάδες ;" HorizontalAlignment="Center" Visibility="Collapsed"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                <CheckBox x:Name="PositiveAnswer_checkbox" Content="Ναι" Checked="PositiveAnswer_checkbox_checked" Width="Auto" />
+                                <CheckBox x:Name="NegativeAnswer_checkbox" Content="Όχι" Checked="NegativeAnswer_checkbox_checked" />
+                            </StackPanel>
+                        </StackPanel>
+
+                    </Border>
+                </Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+
+                    <FontIcon Glyph="&#xEADF;" FontSize="60" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0, 0, 25 ,0" />
+                    <Border Grid.Column="1" CornerRadius="12" BorderThickness="1" BorderBrush="YellowGreen" Padding="15" Background="LightGoldenrodYellow" MinHeight="140">
+
+                        <StackPanel Spacing="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <TextBlock Text="Ερώτηση Συμπλήρωσης Κενού" FontWeight="SemiBold" FontSize="16" Margin="0, 0, 0, 8" HorizontalAlignment="Center"/>
+
+                            <ScrollViewer ZoomMode="Disabled"
+                            IsTabStop="True" IsVerticalScrollChainingEnabled="True"  
+                            HorizontalAlignment="Center" VerticalAlignment="Center"  
+                            HorizontalScrollMode="Enabled" HorizontalScrollBarVisibility="Auto"  
+                            VerticalScrollMode="Disabled" VerticalScrollBarVisibility="Disabled" >
+                                <StackPanel>
+                                    <StackPanel x:Name="question_3_1" Orientation="Horizontal" HorizontalAlignment="Center" Spacing="7" VerticalAlignment="Center" Margin="0 , 7, 0, 17" Visibility="Visible">
+                                        <TextBlock x:Name="question_3_1_text" Text="«Η Αλεξανδρούπολη είναι μια περιοχή η οποία βρίσκεται στη " VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
+                                        <ComboBox x:Name="question_3_1_combobox" PlaceholderText="Επιλογή" Width="130" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+                                            <x:String>Βόρεια</x:String>
+                                            <x:String>Κεντρική</x:String>
+                                            <x:String>Νότια</x:String>
+                                        </ComboBox>
+                                        <TextBlock Text="Ελλάδα.»" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" />
+                                    </StackPanel>
+                                    <StackPanel x:Name="question_3_2" Orientation="Horizontal" HorizontalAlignment="Center" Spacing="7" VerticalAlignment="Center" Margin="0 , 7, 0, 17" Visibility="Collapsed">
+                                        <TextBlock x:Name="question_3_2_text" Text="«Η Αλεξανδρούπολη είναι μια περιοχή η οποία βρίσκεται στη " VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
+                                        <ComboBox x:Name="question_3_2_combobox" PlaceholderText="Επιλογή" Width="130" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+                                            <x:String>Βόρεια</x:String>
+                                            <x:String>Κεντρική</x:String>
+                                            <x:String>Νότια</x:String>
+                                        </ComboBox>
+                                        <TextBlock Text="Ελλάδα.»" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" />
+                                    </StackPanel>
+                                </StackPanel>
+                            </ScrollViewer>
+
+                        </StackPanel>
+
+                    </Border>
+                </Grid>
+            </StackPanel>
+
+
+        </ScrollViewer>
+
+        <!-- For specific purposes only - Don't activate -->
+        <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="10" Visibility="Collapsed">
+            <ProgressRing IsActive="True" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            <TextBlock Text="Φόρτωση ερωτήσεων..." FontSize="16" FontWeight="SemiBold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </StackPanel>
+
+        <InfoBar Grid.Row="2" x:Name="info_message" IsOpen="True" Severity="Informational" Title="Αναμονή ολοκλήρωσης" IsClosable="False" Margin="10, 0, 10, 0"
+        Message="Απάντησε τις ερωτήσεις του τεστ σωστά ώστε να μπορέσεις να συνεχίσεις σε επόμενες ενότητες" />
+
+        <Grid Grid.Row="3" VerticalAlignment="Center" Margin="0,10 , 10, 10" Padding="0, 10, 0, 10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+
+            <TextBlock Text="Πάτησε το κουμπί ώστε να ελεγχθεί η ορθότητα των απαντήσεων" FontWeight="SemiBold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+            <Button Grid.Column="1" VerticalAlignment="Bottom" Content="Ολοκλήρωση" Style="{StaticResource AccentButtonStyle}" Width="180"  Click="Complete_button_Click"/>
+        </Grid>
+
 
 
 

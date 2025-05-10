@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -23,6 +23,7 @@ using Windows.Devices.Enumeration;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Graphics;
+using WinRT;
 
 
 
@@ -165,13 +166,25 @@ namespace Educational_Software
 
         private async Task SizeWindow()
         {
+            var monitorInfo = default(DisplayMonitor);
             var displayList = await DeviceInformation.FindAllAsync
                               (DisplayMonitor.GetDeviceSelector());
 
             if (!displayList.Any())
                 return;
 
-            var monitorInfo = await DisplayMonitor.FromInterfaceIdAsync(displayList[0].Id);
+            if (displayList.Count > 1)
+            {
+
+                monitorInfo = await DisplayMonitor.FromInterfaceIdAsync(displayList[1].Id);
+                Debug.WriteLine("<<ALERT>> Monitor 1: " + monitorInfo.NativeResolutionInRawPixels.Width + "x" + monitorInfo.NativeResolutionInRawPixels.Height);
+            }
+            else
+            {
+
+                monitorInfo = await DisplayMonitor.FromInterfaceIdAsync(displayList[0].Id);
+                Debug.WriteLine("<<ALERT>> Monitor 0: " + monitorInfo.NativeResolutionInRawPixels.Width + "x" + monitorInfo.NativeResolutionInRawPixels.Height);
+            }
 
 
 
@@ -195,6 +208,7 @@ namespace Educational_Software
 
             }
         }
+
 
         private int WindowSubClass(IntPtr hWnd, uint uMsg, IntPtr wParam, IntPtr lParam, IntPtr uIdSubclass, uint dwRefData)
         {
@@ -274,31 +288,34 @@ namespace Educational_Software
                             }
                             break;
                         case "edu_1":
-                            contentFrame.Navigate(typeof(Edu_1));
+                            contentFrame.Navigate(typeof(Edu_1), user);
                             break;
                         case "quiz_1":
-                            contentFrame.Navigate(typeof(Quiz_1));
+                            contentFrame.Navigate(typeof(Quiz_1), user);
                             break;
                         case "test_1":
-                            contentFrame.Navigate(typeof(Test_1));
+                            contentFrame.Navigate(typeof(Test_1), user);
                             break;
                         case "edu_2":
-                            contentFrame.Navigate(typeof(Edu_2));
+                            contentFrame.Navigate(typeof(Edu_2), user);
                             break;
                         case "quiz_2":
-                            contentFrame.Navigate(typeof(Quiz_2));
+                            contentFrame.Navigate(typeof(Quiz_2), user);
                             break;
                         case "test_2":
-                            contentFrame.Navigate(typeof(Test_2));
+                            contentFrame.Navigate(typeof(Test_2), user);
                             break;
                         case "edu_3":
-                            contentFrame.Navigate(typeof(Edu_3));
+                            contentFrame.Navigate(typeof(Edu_3), user);
                             break;
                         case "quiz_3":
-                            contentFrame.Navigate(typeof(Quiz_3));
+                            contentFrame.Navigate(typeof(Quiz_3), user);
                             break;
                         case "test_3":
-                            contentFrame.Navigate(typeof(Test_3));
+                            contentFrame.Navigate(typeof(Test_3), user);
+                            break;
+                        case "user_statistics":
+                            contentFrame.Navigate(typeof(User_statistics), user);
                             break;
                         case "about_the_app":
                             contentFrame.Navigate(typeof(About_the_app));

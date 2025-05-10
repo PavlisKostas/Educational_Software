@@ -240,6 +240,11 @@
 
 
                 <NavigationView.FooterMenuItems>
+                    <NavigationViewItem Content="Τα στατιστικά μου" Tag="user_statistics">
+                        <NavigationViewItem.Icon>
+                            <FontIcon Glyph="&#xE77B;"/>
+                        </NavigationViewItem.Icon>
+                    </NavigationViewItem>
                     <NavigationViewItem Content="Σχετικά με την εφαρμογή" Tag="about_the_app">
                         <NavigationViewItem.Icon>
                             <FontIcon Glyph="&#xF167;"/>
@@ -247,12 +252,8 @@
                     </NavigationViewItem>
                 </NavigationView.FooterMenuItems>
 
-                <Frame x:Name="contentFrame">
-                    <StackPanel Orientation="Vertical" VerticalAlignment="Center" Spacing="20">
-                        <Image Source="/Assets/light_house.png" HorizontalAlignment="Center" VerticalAlignment="Center" Height="150" Width="150"/>
-                        <TextBlock Text="...the UI is a work in progress !" FontSize="25" FontWeight="SemiBold" HorizontalAlignment="Center"/>
-                    </StackPanel>
-                </Frame>
+                <Frame x:Name="contentFrame"/>
+                
             </NavigationView>
 
             <TeachingTip x:Name="Main_TeachingTip" x:FieldModifier="internal"

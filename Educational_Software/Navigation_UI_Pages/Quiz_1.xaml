@@ -31,7 +31,7 @@
         HorizontalAlignment="Stretch" VerticalAlignment="Center"  
         HorizontalScrollMode="Disabled" HorizontalScrollBarVisibility="Disabled"  
         VerticalScrollMode="Enabled" VerticalScrollBarVisibility="Auto"
-        Margin="40, 0, 40, 20">
+        Margin="40, 8, 40, 8">
 
             <StackPanel Spacing="50">
                 <Grid>
@@ -42,12 +42,12 @@
                     
                     <TextBlock Text="1." FontSize="50" FontWeight="SemiBold" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Margin="0, 0, 20, 0" />
                     <Border Grid.Column="1" CornerRadius="12" BorderThickness="1" BorderBrush="Aquamarine" Padding="15" Background="AliceBlue" >
-       
-                            <RadioButtons x:Name="question_1_radio" Header="Ερώτηση για την Αλεξανδρούπολη No 1..." MaxColumns="3" >
-                                <RadioButton Content="Απάντηση 1" />
-                                <RadioButton Content="Απάντηση 2" />
-                                <RadioButton Content="Απάντηση 3" />
-                            </RadioButtons>
+
+                        <RadioButtons x:Name="question_1_radio" Header="Πού βρίσκεται ο φάρος της Αλεξανδρούπολης;" MaxColumns="3" >
+                            <RadioButton x:Name="question_1_radio_answer1" Content="Στην ανατολική πλευρά του λιμανιού" />
+                            <RadioButton x:Name="question_1_radio_answer2" Content="Στο κέντρο της πόλης" />
+                            <RadioButton x:Name="question_1_radio_answer3" Content="Στη δυτική πλευρά του λιμανιού" />
+                        </RadioButtons>
                      
                     </Border>
                 </Grid>
@@ -60,15 +60,15 @@
                     <TextBlock Text="2." FontSize="50" FontWeight="SemiBold" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Margin="0, 0, 20, 0" />
                     <Border Grid.Column="1" CornerRadius="12" BorderThickness="1" BorderBrush="Aquamarine" Padding="15" Background="AliceBlue">
                         <StackPanel>
-                            <RadioButtons x:Name="question_2_radio_1" Header="Ερώτηση για την Αλεξανδρούπολη No 2..." MaxColumns="3" Visibility="Collapsed">
-                                <RadioButton Content="Απάντηση 1" />
-                                <RadioButton Content="Απάντηση 2" />
-                                <RadioButton Content="Απάντηση 3" />
+                            <RadioButtons x:Name="question_2_radio_1" Header="Ποια είναι η εμβέλεια της φωτεινής δέσμης του φάρου;" MaxColumns="3" Visibility="Collapsed">
+                                <RadioButton x:Name="question_2_radio1_answer1" Content="12 ναυτικά μίλια" />
+                                <RadioButton x:Name="question_2_radio1_answer2" Content="28 ναυτικά μίλια" />
+                                <RadioButton x:Name="question_2_radio1_answer3" Content="24 ναυτικά μίλια" />
                             </RadioButtons>
-                            <RadioButtons x:Name="question_2_radio_2" Header="Ερώτηση για την Αλεξανδρούπολη No 2.2..." MaxColumns="3" Visibility="Collapsed" >
-                                <RadioButton Content="Απάντηση 1" />
-                                <RadioButton Content="Απάντηση 2" />
-                                <RadioButton Content="Απάντηση 3" />
+                            <RadioButtons x:Name="question_2_radio_2" Header="Πότε έγιναν τα εγκαίνια του φάρου;" MaxColumns="3" Visibility="Collapsed" >
+                                <RadioButton x:Name="question_2_radio2_answer1" Content="Την 1η Ιουνίου 1850" />
+                                <RadioButton x:Name="question_2_radio2_answer2" Content="Την 1η Ιουνίου 1880" />
+                                <RadioButton x:Name="question_2_radio2_answer3" Content="Την 1η Ιουνίου 1974" />
                             </RadioButtons>
                             <TextBlock x:Name="question_2_empty" Text="Θέση Ερώτησης 2" FontSize="20" FontWeight="SemiLight" Foreground="DimGray" HorizontalAlignment="Center" Visibility="Visible"/>
                         </StackPanel>
@@ -83,20 +83,20 @@
                     <TextBlock Text="3." FontSize="50" FontWeight="SemiBold" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Margin="0, 0, 20, 0" />
                     <Border Grid.Column="1" CornerRadius="12" BorderThickness="1" BorderBrush="Aquamarine" Padding="15" Background="AliceBlue">
                         <StackPanel>
-                            <RadioButtons x:Name="question_3_radio_1" Header="Ερώτηση για την Αλεξανδρούπολη No 3..." MaxColumns="3" Visibility="Collapsed">
-                                <RadioButton Content="Απάντηση 1" />
-                                <RadioButton Content="Απάντηση 2" />
-                                <RadioButton Content="Απάντηση 3" />
+                            <RadioButtons x:Name="question_3_radio_1" Header="Τι αλλαγή πραγματοποιήθηκε στον φάρο το 2002;" MaxColumns="3" Visibility="Collapsed">
+                                <RadioButton x:Name="question_3_radio1_answer1" Content="Ανακαινίστηκε το κυλινδρικό του βάθρο" />
+                                <RadioButton x:Name="question_3_radio1_answer2" Content="Αντικαταστάθηκε η φωτεινή δέσμη" />
+                                <RadioButton x:Name="question_3_radio1_answer3" Content="Αντικαταστάθηκε ο ηλεκτρολογικός του εξοπλισμός" />
                             </RadioButtons>
-                            <RadioButtons x:Name="question_3_radio_2" Header="Ερώτηση για την Αλεξανδρούπολη No 3.2..." MaxColumns="3" Visibility="Collapsed">
-                                <RadioButton Content="Απάντηση 1" />
-                                <RadioButton Content="Απάντηση 2" />
-                                <RadioButton Content="Απάντηση 3" />
+                            <RadioButtons x:Name="question_3_radio_2" Header="Ποια ήταν η αρχική μέθοδος λειτουργίας του φάρου;" MaxColumns="3" Visibility="Collapsed">
+                                <RadioButton x:Name="question_3_radio2_answer1" Content="Με ηλεκτρικό ρεύμα" />
+                                <RadioButton x:Name="question_3_radio2_answer2" Content="Με ασετιλίνη" />
+                                <RadioButton x:Name="question_3_radio2_answer3" Content="Με κάρβουνο" />
                             </RadioButtons>
-                            <RadioButtons x:Name="question_3_radio_3" Header="Ερώτηση για την Αλεξανδρούπολη No 3.3..." MaxColumns="3" Visibility="Collapsed">
-                                <RadioButton Content="Απάντηση 1" />
-                                <RadioButton Content="Απάντηση 2" />
-                                <RadioButton Content="Απάντηση 3" />
+                            <RadioButtons x:Name="question_3_radio_3" Header="Ποια είναι η εμβέλεια της φωτεινής δέσμης του φάρου;" MaxColumns="3" Visibility="Collapsed">
+                                <RadioButton x:Name="question_3_radio3_answer1" Content="12 ναυτικά μίλια" />
+                                <RadioButton x:Name="question_3_radio3_answer2" Content="18 ναυτικά μίλια" />
+                                <RadioButton x:Name="question_3_radio3_answer3" Content="24 ναυτικά μίλια" />
                             </RadioButtons>
                             <TextBlock x:Name="question_3_empty" Text="Θέση Ερώτησης 3" FontSize="20" FontWeight="SemiLight" Foreground="DimGray" HorizontalAlignment="Center" Visibility="Visible"/>
                         </StackPanel>

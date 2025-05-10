@@ -9,8 +9,166 @@
     mc:Ignorable="d">
 
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
-        <TextBlock Text="3rd Educational Chapter" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" FontWeight="SemiBold"/>
+        <StackPanel Orientation="Horizontal" Spacing="15" HorizontalAlignment="Center" Margin="0, 15,0,5">
+            <FontIcon Glyph="&#xE82D;" FontSize="42"/>
+            <TextBlock Text="Παραδοσιακή Αρχιτεκτονική" FontSize="25" FontWeight="SemiBold" VerticalAlignment="Center"/>
+        </StackPanel>
+
+        <ScrollViewer Grid.Row="1" ZoomMode="Disabled"
+        IsTabStop="True" IsVerticalScrollChainingEnabled="True"  
+        HorizontalAlignment="Center" VerticalAlignment="Center"  
+        HorizontalScrollMode="Disabled" HorizontalScrollBarVisibility="Disabled"  
+        VerticalScrollMode="Enabled" VerticalScrollBarVisibility="Auto"
+        Margin="0, 20, 0, 20">
+
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="20" >
+
+                <Border CornerRadius="12"  Width="360" Height="240">
+                    <Image Source="/Assets/pic_1_edu_3.jpg" Width="380" Height="270"/>
+                </Border>
+
+
+                <TextBlock Text="Γενικά" FontWeight="SemiBold" HorizontalAlignment="Center" FontSize="22" Margin="0, 0, 0, 0"/>
+
+                <TextBlock TextAlignment="Center" FontSize="16" TextWrapping="WrapWholeWords" Margin="50, 0, 50, 0 " >
+                Η Αλεξανδρούπολη είναι μία σχετικά νέα πόλη. «Γεννήθηκε» στα τέλη του 19ου αιώνα και τα πρώτα κτίσματα ανήκουν στην περίοδο που η γεωγραφική της θέση, τόσο ως λιμάνι όσο και ως σταυροδρόμι του άξονα Θεσσαλονίκης-Κωνσταντινούπολης, αλλά και ως κατάληξη της σιδηροδρομικής γραμμής από την Ανδριανούπολη, απέκτησε έναν οικισμό αντάξιο της εμπορικής και οικονομικής της προοπτικής. Σε αυτό το πλαίσιο, τα κτίρια που ανήκουν σε αυτή, την πρώτη της εποχή, είναι και τα παλαιότερα της πόλης.
+                </TextBlock>
+
+                
+                <TextBlock Text="Ζαρίφειος Παιδαγωγική Ακαδημία" FontWeight="SemiBold" HorizontalAlignment="Center" FontSize="22" Margin="0, 20, 0, 0"/>
+
+                <Grid Margin="50, 0, 50, 0 ">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock TextAlignment="Justify" VerticalAlignment="Center" FontSize="16" TextWrapping="WrapWholeWords"  >
+                    To κτίριο που στεγάζεται το 1ο Πειραματικό Δημοτικό Σχολείο Αλεξανδρούπολης είναι ένα από τα σπουδαιότερα και παλιότερα νεοκλασικά κτίρια της Αλεξανδρούπολης. Πρόκειται για το κτίριο της Ζαριφείου Παιδαγωγικής Ακαδημίας το οποίο πήρε το όνομά του από τον μεγάλο εθνικό ευεργέτη Γεώργιο Ζαρίφη, πλούσιο έμπορο από την Κωνσταντινούπολη, ο οποίος  χρηματοδότησε την κατασκευή του. Ο εν λόγω ευεργέτης προσέφερε μεγάλο μέρος της περιουσίας του για τη δημιουργία πολλών εκπαιδευτικών ιδρυμάτων μεταξύ των οποίων τα Ζαρίφεια Διδασκαλεία στη Φιλιππούπολη. Τα Ζαρίφεια Διδασκαλία Φιλιππούπολης λειτούργησαν μέχρι το 1906 και μετά το κλείσιμό τους  μεταφέρθηκαν στην Αλεξανδρούπολη.
+                    </TextBlock>
+
+                    <Border Grid.Column="1" CornerRadius="12"  Width="300" Height="180" Margin=" 15, 0, 0, 0">
+                        <Image Source="/Assets/pic_4_edu_3.jpg" Width="320" Height="210"/>
+                    </Border>
+
+                </Grid>
+
+                <TextBlock Text="Γαλλικός Σιδηροδρομικός Σταθμός" FontWeight="SemiBold" HorizontalAlignment="Center" FontSize="22" Margin="0, 20, 0, 0"/>
+
+                <Grid Margin="50, 0, 50, 0 ">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Border CornerRadius="12"  Width="300" Height="210" Margin="0, 0, 15, 0">
+                        <Image Source="/Assets/pic_2_edu_3.jpg" Width="320" Height="240"/>
+                    </Border>
+                    
+                    <TextBlock Grid.Column="1" TextAlignment="Justify" VerticalAlignment="Center" FontSize="16" TextWrapping="WrapWholeWords"  >
+                    Το διώροφο κεντρικό κτίριο του Σιδηροδρομικού Σταθμού των Ανατολικών Σιδηροδρόμων (CO) και αργότερα της Γαλλοελληνικής (C।F.F.H.), είναι από τα πρώτα κτήρια αυτής της πόλης. Είναι άλλωστε γνωστό ότι η Αλεξανδρούπολη (παλιά Δεδέαγατς) από σιδηροδρόμου άρχεσθαι! Το κτίριο αυτό είναι διώροφο με κεραμοσκεπή, κατασκευασμένο από οπτοπλινθοδομή και εξωτερικά καλύπτεται με ξύλινη επένδυση (με οριζόντιες σανίδες στο ισόγειο και κάθετες στον όροφο). Εξαιτίας της γειτνίασής του με τον λιμένα της πόλης εξυπηρετούσε όλα τα μέσα ανταποκρίσεως για τη διασπορά ή τη συγκέντρωση επιβατών και εμπορευμάτων. Σήμερα, ως σταθμός Διαλογής, εξακολουθεί να στεγάζει λειτουργίες της σιδηροδρομικής υπηρεσίας και κυρίως αποτελεί το σημείο διασταύρωσης των γραμμών Θεσσαλονίκης – Αλεξανδρούπολης και Αλεξανδρούπολης – Ορμενίου.
+                    </TextBlock>
+
+                    
+                </Grid>
+
+
+                <TextBlock Text="Δημοτική Βιβλιοθήκη" FontWeight="SemiBold" HorizontalAlignment="Center" FontSize="22" Margin="0, 20, 0, 0"/>
+
+                <Grid Margin="50, 0, 50, 0 ">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock TextAlignment="Justify" VerticalAlignment="Center" FontSize="16" TextWrapping="WrapWholeWords"  >
+                    Το Καπνομάγαζο τοπόσημο Αλεξανδρούπολης είναι ένα από τα πιο εμβληματικά κτήρια της πόλης. Σχεδόν σε όλη τη διάρκεια της ιστορίας της αποτελεί κυρίαρχο κτίριο στο τοπίο της, καθώς κτίσθηκε το 1892, τότε που το όνομα της πόλης ήταν Δεδέαγατς. Κατασκευαστής ήταν η πολυπληθής τότε Καθολική Κοινότητα και η αρχική χρήση του ήταν να στεγάσει το Σχολείο Αρρένων των Καθολικών.Το 1904 φωτιά που ξέσπασε από ατύχημα καταστρέφει μεγάλο μέρος του.Το 1922, το κτίριο στέγασε τις οικογένειες των προσφύγων από την Ανατολική Θράκη και την Μικρά Ασία. Αργότερα το 1924 αγοράστηκε από την «Γενική Εταιρία Καπνού» με σκοπό να χρησιμοποιηθεί ως χώρος επεξεργασίας και αποθήκευσης καπνού. Αυτή η χρήση του έδωσε και το όνομα του. Σήμερα, στο κτίριο λειτουργεί η δημοτική βιβλιοθήκη της Αλεξανδρούπολης.
+                    </TextBlock>
+
+                    <Border Grid.Column="1" CornerRadius="12"  Width="260" Height="210" Margin=" 15, 0, 0, 0">
+                        <Image Source="/Assets/pic_3_edu_3.jpg" Width="280" Height="240"/>
+                    </Border>
+
+                </Grid>
+
+                <StackPanel Orientation="Horizontal" Spacing="15" HorizontalAlignment="Center" Margin="0, 20, 0, 0">
+                    <FontIcon Glyph="&#xE707;" FontSize="26" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+                    <TextBlock Text="Τοποθεσίες Παραδοσιακών Κτιρίων" FontWeight="SemiBold" HorizontalAlignment="Center" FontSize="22" />
+                </StackPanel>
+
+
+                <ScrollViewer Grid.Row="1" ZoomMode="Disabled"
+                IsTabStop="True" IsVerticalScrollChainingEnabled="True"  
+                HorizontalAlignment="Center" VerticalAlignment="Center"  
+                HorizontalScrollMode="Enabled" HorizontalScrollBarVisibility="Auto"  
+                VerticalScrollMode="Disabled" VerticalScrollBarVisibility="Disabled" Margin="50, 0, 50, 0" >
+
+                    <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Height="500" Width="1100" >
+                        <Image Source="/Assets/pic_map_edu_3.png" Stretch="UniformToFill" />
+
+                        <!-- Buttons -->
+                        <Button x:Name="Hotspot_1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="50" Margin="210, 140, 0, 0" Style="{StaticResource AccentButtonStyle}" Click="Hotspot_1_Enter">
+                            <Button.RenderTransform>
+                                <ScaleTransform ScaleX="0.50" ScaleY="0.50"/>
+                            </Button.RenderTransform>
+                            <FontIcon Glyph="&#xE946;" FontSize="27" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                        </Button>
+
+                        <Button x:Name="Hotspot_2" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="50" Margin="95, 340, 0, 0" Style="{StaticResource AccentButtonStyle}" Click="Hotspot_2_Enter"  >
+                            <Button.RenderTransform>
+                                <ScaleTransform ScaleX="0.50" ScaleY="0.50"/>
+                            </Button.RenderTransform>
+                            <FontIcon Glyph="&#xE946;" FontSize="27" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                        </Button>
+
+                        <Button x:Name="Hotspot_3" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="50" Margin="980, 80, 0, 0" Style="{StaticResource AccentButtonStyle}" Click="Hotspot_3_Enter" >
+                            <Button.RenderTransform>
+                                <ScaleTransform ScaleX="0.50" ScaleY="0.50"/>
+                            </Button.RenderTransform>
+                            <FontIcon Glyph="&#xE946;" FontSize="27" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                        </Button>
+
+
+                        <!-- TeachingTips -->
+
+                        <TeachingTip x:Name="TeachingTip1" Title="🏛️ Δημοτική Βιβλιοθήκη" PreferredPlacement="Top" IsLightDismissEnabled="True" />
+
+                        <TeachingTip x:Name="TeachingTip2" Title="🏛️ Ζαρίφειος Παιδαγωγική Ακαδημία" PreferredPlacement="Top" IsLightDismissEnabled="True"/>
+
+                        <TeachingTip x:Name="TeachingTip3" Title="🏛️ Γαλλικός Σιδηροδρομικός Σταθμός" PreferredPlacement="Top" IsLightDismissEnabled="True"/>
+                    </Grid>
+                </ScrollViewer>
+
+
+                <StackPanel Orientation="Horizontal" Spacing="15" HorizontalAlignment="Center" Margin="0, 20, 0, 0">
+                    <FontIcon Glyph="&#xE8F2;" FontSize="26" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+                    <TextBlock Text="Συγκεντρωτικές Πληροφορίες" FontWeight="SemiBold" HorizontalAlignment="Center" FontSize="22" />
+                </StackPanel>
+
+                <Expander
+             Margin="50, 0, 50, 0"
+             IsExpanded="False"
+             ExpandDirection="Down"
+             HorizontalAlignment="Stretch"
+             Header="Τι στεγάζει σήμερα η Ζαρίφειος Παιδαγωγική Ακαδημία"
+             Content="Το 1ο Πειραματικό Δημοτικό Σχολείο Αλεξανδρούπολης"/>
+
+                <Expander
+             Margin="50, 0, 50, 0"
+             IsExpanded="False"
+             ExpandDirection="Down"
+             HorizontalAlignment="Stretch"
+             Header="Η σημερινή χρήση του Καπνομάγαζου"
+             Content="Σήμερα λειτουργεί εκεί η Δημοτική Βιβλιοθήκη της Αλεξανδρούπολης"/>
+
+            </StackPanel>
+        </ScrollViewer>
+
 
     </Grid>
 </Page>

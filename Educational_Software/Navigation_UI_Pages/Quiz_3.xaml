@@ -31,7 +31,7 @@
     HorizontalAlignment="Stretch" VerticalAlignment="Center"  
     HorizontalScrollMode="Disabled" HorizontalScrollBarVisibility="Disabled"  
     VerticalScrollMode="Enabled" VerticalScrollBarVisibility="Auto"
-    Margin="40, 0, 40, 20">
+    Margin="40, 8, 40, 8">
 
             <StackPanel Spacing="50">
                 <Grid>
@@ -44,9 +44,9 @@
                     <Border Grid.Column="1" CornerRadius="12" BorderThickness="1" BorderBrush="Aquamarine" Padding="15" Background="AliceBlue" >
 
                         <RadioButtons x:Name="question_1_radio" Header="Ερώτηση για την Αλεξανδρούπολη No 1..." MaxColumns="3" >
-                            <RadioButton Content="Απάντηση 1" />
-                            <RadioButton Content="Απάντηση 2" />
-                            <RadioButton Content="Απάντηση 3" />
+                            <RadioButton x:Name="question_1_radio_answer1" Content="Απάντηση 1" />
+                            <RadioButton x:Name="question_1_radio_answer2" Content="Απάντηση 2" />
+                            <RadioButton x:Name="question_1_radio_answer3" Content="Απάντηση 3" />
                         </RadioButtons>
 
                     </Border>
@@ -61,14 +61,14 @@
                     <Border Grid.Column="1" CornerRadius="12" BorderThickness="1" BorderBrush="Aquamarine" Padding="15" Background="AliceBlue">
                         <StackPanel>
                             <RadioButtons x:Name="question_2_radio_1" Header="Ερώτηση για την Αλεξανδρούπολη No 2..." MaxColumns="3" Visibility="Collapsed">
-                                <RadioButton Content="Απάντηση 1" />
-                                <RadioButton Content="Απάντηση 2" />
-                                <RadioButton Content="Απάντηση 3" />
+                                <RadioButton x:Name="question_2_radio1_answer1" Content="Απάντηση 1" />
+                                <RadioButton x:Name="question_2_radio1_answer2" Content="Απάντηση 2" />
+                                <RadioButton x:Name="question_2_radio1_answer3" Content="Απάντηση 3" />
                             </RadioButtons>
                             <RadioButtons x:Name="question_2_radio_2" Header="Ερώτηση για την Αλεξανδρούπολη No 2.2..." MaxColumns="3" Visibility="Collapsed" >
-                                <RadioButton Content="Απάντηση 1" />
-                                <RadioButton Content="Απάντηση 2" />
-                                <RadioButton Content="Απάντηση 3" />
+                                <RadioButton x:Name="question_2_radio2_answer1" Content="Απάντηση 1" />
+                                <RadioButton x:Name="question_2_radio2_answer2" Content="Απάντηση 2" />
+                                <RadioButton x:Name="question_2_radio2_answer3" Content="Απάντηση 3" />
                             </RadioButtons>
                             <TextBlock x:Name="question_2_empty" Text="Θέση Ερώτησης 2" FontSize="20" FontWeight="SemiLight" Foreground="DimGray" HorizontalAlignment="Center" Visibility="Visible"/>
                         </StackPanel>
@@ -84,19 +84,19 @@
                     <Border Grid.Column="1" CornerRadius="12" BorderThickness="1" BorderBrush="Aquamarine" Padding="15" Background="AliceBlue">
                         <StackPanel>
                             <RadioButtons x:Name="question_3_radio_1" Header="Ερώτηση για την Αλεξανδρούπολη No 3..." MaxColumns="3" Visibility="Collapsed">
-                                <RadioButton Content="Απάντηση 1" />
-                                <RadioButton Content="Απάντηση 2" />
-                                <RadioButton Content="Απάντηση 3" />
+                                <RadioButton x:Name="question_3_radio1_answer1" Content="Απάντηση 1" />
+                                <RadioButton x:Name="question_3_radio1_answer2" Content="Απάντηση 2" />
+                                <RadioButton x:Name="question_3_radio1_answer3" Content="Απάντηση 3" />
                             </RadioButtons>
                             <RadioButtons x:Name="question_3_radio_2" Header="Ερώτηση για την Αλεξανδρούπολη No 3.2..." MaxColumns="3" Visibility="Collapsed">
-                                <RadioButton Content="Απάντηση 1" />
-                                <RadioButton Content="Απάντηση 2" />
-                                <RadioButton Content="Απάντηση 3" />
+                                <RadioButton x:Name="question_3_radio2_answer1" Content="Απάντηση 1" />
+                                <RadioButton x:Name="question_3_radio2_answer2" Content="Απάντηση 2" />
+                                <RadioButton x:Name="question_3_radio2_answer3" Content="Απάντηση 3" />
                             </RadioButtons>
                             <RadioButtons x:Name="question_3_radio_3" Header="Ερώτηση για την Αλεξανδρούπολη No 3.3..." MaxColumns="3" Visibility="Collapsed">
-                                <RadioButton Content="Απάντηση 1" />
-                                <RadioButton Content="Απάντηση 2" />
-                                <RadioButton Content="Απάντηση 3" />
+                                <RadioButton x:Name="question_3_radio3_answer1" Content="Απάντηση 1" />
+                                <RadioButton x:Name="question_3_radio3_answer2" Content="Απάντηση 2" />
+                                <RadioButton x:Name="question_3_radio3_answer3" Content="Απάντηση 3" />
                             </RadioButtons>
                             <TextBlock x:Name="question_3_empty" Text="Θέση Ερώτησης 3" FontSize="20" FontWeight="SemiLight" Foreground="DimGray" HorizontalAlignment="Center" Visibility="Visible"/>
                         </StackPanel>

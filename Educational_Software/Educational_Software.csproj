@@ -40,6 +40,7 @@
     <None Remove="Navigation_UI_Pages\Test_1.xaml" />
     <None Remove="Navigation_UI_Pages\Test_2.xaml" />
     <None Remove="Navigation_UI_Pages\Test_3.xaml" />
+    <None Remove="Navigation_UI_Pages\User_statistics.xaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -116,6 +117,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Navigation_UI_Pages\User_statistics.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
 
 

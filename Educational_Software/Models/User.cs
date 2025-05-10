@@ -30,6 +30,8 @@ namespace Educational_Software.Models
         }
         public Answer answer(int section, int question, int time, float rating)
         {
+            bool write_answer = DatabaseHandler.add_answer(id,section,question,time,rating);
+
             return new Answer(id, section, question, time, rating);
         }
 

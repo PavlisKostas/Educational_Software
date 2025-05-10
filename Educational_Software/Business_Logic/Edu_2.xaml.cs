@@ -1,3 +1,4 @@
+using Educational_Software.Models;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -15,16 +16,15 @@ using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Media.Core;
 
-// To learn more about WinUI, the WinUI project structure,
-// and more about our project templates, see: http://aka.ms/winui-project-info.
+
 
 namespace Educational_Software.Navigation_UI_Pages
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
+
     public sealed partial class Edu_2 : Page
     {
+        User user;
+
         public Edu_2()
         {
             this.InitializeComponent();
@@ -46,6 +46,14 @@ namespace Educational_Software.Navigation_UI_Pages
             {
                 VideoPlayer.MediaPlayer.Pause();
                 VideoPlayer.MediaPlayer.Dispose();
+            }
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            if (e.Parameter != null)
+            {
+                user = e.Parameter as User;
             }
         }
     }

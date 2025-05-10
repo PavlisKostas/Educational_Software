@@ -1,10 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
+using Educational_Software.Models;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -12,19 +6,22 @@ using Microsoft.UI.Xaml.Data;
 using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
-using Educational_Software.Models;
-using System.Diagnostics;
-
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.Foundation;
+using Windows.Foundation.Collections;
 
 
 namespace Educational_Software.Navigation_UI_Pages
 {
-
-    public sealed partial class Edu_1 : Page
+    public sealed partial class User_statistics : Page
     {
         User user;
 
-        public Edu_1()
+        public User_statistics()
         {
             this.InitializeComponent();
         }
@@ -34,9 +31,9 @@ namespace Educational_Software.Navigation_UI_Pages
             if (e.Parameter != null)
             {
                 user = e.Parameter as User;
-
-                Debug.WriteLine("User ID: " + user.email);
             }
         }
     }
+
+
 }

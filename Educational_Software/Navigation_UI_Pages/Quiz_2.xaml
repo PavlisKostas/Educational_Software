@@ -31,7 +31,7 @@
     HorizontalAlignment="Stretch" VerticalAlignment="Center"  
     HorizontalScrollMode="Disabled" HorizontalScrollBarVisibility="Disabled"  
     VerticalScrollMode="Enabled" VerticalScrollBarVisibility="Auto"
-    Margin="40, 0, 40, 20">
+    Margin="40, 8, 40, 8">
 
             <StackPanel Spacing="50">
                 <Grid>
@@ -43,10 +43,10 @@
                     <TextBlock Text="1." FontSize="50" FontWeight="SemiBold" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Margin="0, 0, 20, 0" />
                     <Border Grid.Column="1" CornerRadius="12" BorderThickness="1" BorderBrush="Aquamarine" Padding="15" Background="AliceBlue" >
 
-                        <RadioButtons x:Name="question_1_radio" Header="Ερώτηση για την Αλεξανδρούπολη No 1..." MaxColumns="3" >
-                            <RadioButton Content="Απάντηση 1" />
-                            <RadioButton Content="Απάντηση 2" />
-                            <RadioButton Content="Απάντηση 3" />
+                        <RadioButtons x:Name="question_1_radio" Header="Ποια είναι η συνολική έκταση του Εθνικού Πάρκου Δέλτα Έβρου;" MaxColumns="3" >
+                            <RadioButton x:Name="question_1_radio_answer1" Content="95.000 στρέμματα" />
+                            <RadioButton x:Name="question_1_radio_answer2" Content="200.000 στρέμματα" />
+                            <RadioButton x:Name="question_1_radio_answer3" Content="150.000 στρέμματα" />
                         </RadioButtons>
 
                     </Border>
@@ -60,15 +60,15 @@
                     <TextBlock Text="2." FontSize="50" FontWeight="SemiBold" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Margin="0, 0, 20, 0" />
                     <Border Grid.Column="1" CornerRadius="12" BorderThickness="1" BorderBrush="Aquamarine" Padding="15" Background="AliceBlue">
                         <StackPanel>
-                            <RadioButtons x:Name="question_2_radio_1" Header="Ερώτηση για την Αλεξανδρούπολη No 2..." MaxColumns="3" Visibility="Collapsed">
-                                <RadioButton Content="Απάντηση 1" />
-                                <RadioButton Content="Απάντηση 2" />
-                                <RadioButton Content="Απάντηση 3" />
+                            <RadioButtons x:Name="question_2_radio_1" Header="Πόσα είδη αμφιβίων και ερπετών έχουν καταγραφεί στο Δέλτα Έβρου;" MaxColumns="3" Visibility="Collapsed">
+                                <RadioButton x:Name="question_2_radio1_answer1" Content="28" />
+                                <RadioButton x:Name="question_2_radio1_answer2" Content="40" />
+                                <RadioButton x:Name="question_2_radio1_answer3" Content="15" />
                             </RadioButtons>
-                            <RadioButtons x:Name="question_2_radio_2" Header="Ερώτηση για την Αλεξανδρούπολη No 2.2..." MaxColumns="3" Visibility="Collapsed" >
-                                <RadioButton Content="Απάντηση 1" />
-                                <RadioButton Content="Απάντηση 2" />
-                                <RadioButton Content="Απάντηση 3" />
+                            <RadioButtons x:Name="question_2_radio_2" Header="Ποιο από τα παρακάτω φυτά εμφανίζεται συχνά στις ακτές και τις αμμονησίδες του Δέλτα;" MaxColumns="3" Visibility="Collapsed" >
+                                <RadioButton x:Name="question_2_radio2_answer1" Content="Πλατάνι" />
+                                <RadioButton x:Name="question_2_radio2_answer2" Content="Ορχιδέα" />
+                                <RadioButton x:Name="question_2_radio2_answer3" Content="Κρίνο της θάλασσας" />
                             </RadioButtons>
                             <TextBlock x:Name="question_2_empty" Text="Θέση Ερώτησης 2" FontSize="20" FontWeight="SemiLight" Foreground="DimGray" HorizontalAlignment="Center" Visibility="Visible"/>
                         </StackPanel>
@@ -83,20 +83,20 @@
                     <TextBlock Text="3." FontSize="50" FontWeight="SemiBold" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Margin="0, 0, 20, 0" />
                     <Border Grid.Column="1" CornerRadius="12" BorderThickness="1" BorderBrush="Aquamarine" Padding="15" Background="AliceBlue">
                         <StackPanel>
-                            <RadioButtons x:Name="question_3_radio_1" Header="Ερώτηση για την Αλεξανδρούπολη No 3..." MaxColumns="3" Visibility="Collapsed">
-                                <RadioButton Content="Απάντηση 1" />
-                                <RadioButton Content="Απάντηση 2" />
-                                <RadioButton Content="Απάντηση 3" />
+                            <RadioButtons x:Name="question_3_radio_1" Header="Πόσα είδη αμφιβίων και ερπετών έχουν καταγραφεί στο Δέλτα Έβρου;" MaxColumns="3" Visibility="Collapsed">
+                                <RadioButton x:Name="question_3_radio1_answer1" Content="Τούρνα" />
+                                <RadioButton x:Name="question_3_radio1_answer2" Content="Χέλι" />
+                                <RadioButton x:Name="question_3_radio1_answer3" Content="Γουλιανός" />
                             </RadioButtons>
-                            <RadioButtons x:Name="question_3_radio_2" Header="Ερώτηση για την Αλεξανδρούπολη No 3.2..." MaxColumns="3" Visibility="Collapsed">
-                                <RadioButton Content="Απάντηση 1" />
-                                <RadioButton Content="Απάντηση 2" />
-                                <RadioButton Content="Απάντηση 3" />
+                            <RadioButtons x:Name="question_3_radio_2" Header="Ποιο από τα παρακάτω ψάρια ζει σε αλμυρό νερό στο Δέλτα του Έβρου;" MaxColumns="3" Visibility="Collapsed">
+                                <RadioButton x:Name="question_3_radio2_answer1" Content="Τούρνα" />
+                                <RadioButton x:Name="question_3_radio2_answer2" Content="Χέλι" />
+                                <RadioButton x:Name="question_3_radio2_answer3" Content="Γουλιανός" />
                             </RadioButtons>
-                            <RadioButtons x:Name="question_3_radio_3" Header="Ερώτηση για την Αλεξανδρούπολη No 3.3..." MaxColumns="3" Visibility="Collapsed">
-                                <RadioButton Content="Απάντηση 1" />
-                                <RadioButton Content="Απάντηση 2" />
-                                <RadioButton Content="Απάντηση 3" />
+                            <RadioButtons x:Name="question_3_radio_3" Header="Ποιο από τα παρακάτω θηλαστικά ζει στο Δέλτα του Έβρου;" MaxColumns="3" Visibility="Collapsed">
+                                <RadioButton x:Name="question_3_radio3_answer1" Content="Νυφίτσα" />
+                                <RadioButton x:Name="question_3_radio3_answer2" Content="Λύκος" />
+                                <RadioButton x:Name="question_3_radio3_answer3" Content="Καφέ λαγός" />
                             </RadioButtons>
                             <TextBlock x:Name="question_3_empty" Text="Θέση Ερώτησης 3" FontSize="20" FontWeight="SemiLight" Foreground="DimGray" HorizontalAlignment="Center" Visibility="Visible"/>
                         </StackPanel>
