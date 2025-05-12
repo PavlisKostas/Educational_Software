@@ -44,9 +44,9 @@
                     <Border Grid.Column="1" CornerRadius="12" BorderThickness="1" BorderBrush="Aquamarine" Padding="15" Background="AliceBlue" >
 
                         <RadioButtons x:Name="question_1_radio" Header="Πού βρίσκεται ο φάρος της Αλεξανδρούπολης;" MaxColumns="3" >
-                            <RadioButton x:Name="question_1_radio_answer1" Content="Στην ανατολική πλευρά του λιμανιού" />
-                            <RadioButton x:Name="question_1_radio_answer2" Content="Στο κέντρο της πόλης" />
-                            <RadioButton x:Name="question_1_radio_answer3" Content="Στη δυτική πλευρά του λιμανιού" />
+                            <RadioButton x:Name="question_1_radio_answer1" Content="Στη δυτική πλευρά του λιμανιού" />
+                            <RadioButton x:Name="question_1_radio_answer2" Content="Στην ανατολική πλευρά του λιμανιού" />
+                            <RadioButton x:Name="question_1_radio_answer3" Content="Στο κέντρο της πόλης" />
                         </RadioButtons>
                      
                     </Border>

@@ -40,6 +40,7 @@ namespace Educational_Software.Navigation_UI_Pages
             {
                 user = e.Parameter as User;
             }
+            List<Answer> answer_list = user.get_answers();
         }
 
         private void Next_step(object sender, RoutedEventArgs e)
@@ -94,7 +95,7 @@ namespace Educational_Software.Navigation_UI_Pages
                         question_3_radio_1.Visibility = Visibility.Visible;
                         question_3_radio_1.IsEnabled = true;
                         question_list.Add(true);
-                        //user.answer(1, 21, time_period_seconds, 1.5f);
+                        user.answer(1, 21, time_period_seconds, 1.5f);
                     }
                     else if ((bool)question_2_radio1_answer3.IsChecked && time_period_seconds >= answer_timer)
                     {
@@ -102,14 +103,14 @@ namespace Educational_Software.Navigation_UI_Pages
                         question_3_radio_2.IsEnabled = true;
                         question_list.Add(true);
                         time_delay++;
-                        //user.answer(1, 21, time_period_seconds, 1f);
+                        user.answer(1, 21, time_period_seconds, 1f);
                     }
                     else
                     {
                         question_3_radio_2.Visibility = Visibility.Visible;
                         question_3_radio_2.IsEnabled = true;
                         question_list.Add(false);
-                        //user.answer(1, 21, time_period_seconds, 0.5f);
+                        user.answer(1, 21, time_period_seconds, 0.5f);
                     }
                 }
                 else
@@ -120,7 +121,7 @@ namespace Educational_Software.Navigation_UI_Pages
                         question_3_radio_2.Visibility = Visibility.Visible;
                         question_3_radio_2.IsEnabled = true;
                         question_list.Add(true);
-                        //user.answer(1, 22, time_period_seconds, 1.5f);
+                        user.answer(1, 22, time_period_seconds, 1.5f);
                     }
                     else if ((bool)question_2_radio2_answer2.IsChecked && time_period_seconds >= answer_timer)
                     {
@@ -128,14 +129,14 @@ namespace Educational_Software.Navigation_UI_Pages
                         question_3_radio_3.IsEnabled = true;
                         question_list.Add(true);
                         time_delay++;
-                        //user.answer(1, 22, time_period_seconds, 1f);
+                        user.answer(1, 22, time_period_seconds, 1f);
                     }
                     else
                     {
                         question_3_radio_3.Visibility = Visibility.Visible;
                         question_3_radio_3.IsEnabled = true;
                         question_list.Add(false);
-                        //user.answer(1, 22, time_period_seconds, 0.5f);
+                        user.answer(1, 22, time_period_seconds, 0.5f);
                     }
                 }
 
@@ -154,18 +155,18 @@ namespace Educational_Software.Navigation_UI_Pages
                     if ((bool)question_3_radio1_answer3.IsChecked && time_period_seconds < answer_timer)
                     {
                         question_list.Add(true);
-                        //user.answer(1, 31, time_period_seconds, 1.5f);
+                        user.answer(1, 31, time_period_seconds, 1.5f);
                     }
                     else if ((bool)question_3_radio1_answer3.IsChecked && time_period_seconds >= answer_timer)
                     {
                         question_list.Add(true);
                         time_delay++;
-                        //user.answer(1, 31, time_period_seconds, 1f);
+                        user.answer(1, 31, time_period_seconds, 1f);
                     }
                     else
                     {
                         question_list.Add(false);
-                        //user.answer(1, 31, time_period_seconds, 0.5f);
+                        user.answer(1, 31, time_period_seconds, 0.5f);
                     }
                 }
                 else if ((question_list[0] == true && question_list[1] == false) || (question_list[0] == false && question_list[1] == true) || (question_list[0] == true && question_list[1] == true && time_delay == 1))
@@ -174,18 +175,18 @@ namespace Educational_Software.Navigation_UI_Pages
                     if ((bool)question_3_radio2_answer2.IsChecked && time_period_seconds < answer_timer)
                     {
                         question_list.Add(true);
-                        //user.answer(1, 32, time_period_seconds, 1.5f);
+                        user.answer(1, 32, time_period_seconds, 1.5f);
                     }
                     else if ((bool)question_3_radio2_answer2.IsChecked && time_period_seconds >= answer_timer)
                     {
                         question_list.Add(true);
                         time_delay++;
-                        //user.answer(1, 32, time_period_seconds, 1f);
+                        user.answer(1, 32, time_period_seconds, 1f);
                     }
                     else
                     {
                         question_list.Add(false);
-                        //user.answer(1, 32, time_period_seconds, 0.5f);
+                        user.answer(1, 32, time_period_seconds, 0.5f);
                     }
                 }
                 else if (question_list[0] == false && question_list[1] == false || (question_list[0] == true && question_list[1] == true && time_delay == 2))
@@ -194,18 +195,18 @@ namespace Educational_Software.Navigation_UI_Pages
                     if ((bool)question_3_radio3_answer3.IsChecked && time_period_seconds < answer_timer)
                     {
                         question_list.Add(true);
-                        //user.answer(1, 33, time_period_seconds, 1.5f);
+                        user.answer(1, 33, time_period_seconds, 1.5f);
                     }
                     else if ((bool)question_3_radio3_answer3.IsChecked && time_period_seconds >= answer_timer)
                     {
                         question_list.Add(true);
                         time_delay++;
-                        //user.answer(1, 33, time_period_seconds, 1f);
+                        user.answer(1, 33, time_period_seconds, 1f);
                     }
                     else
                     {
                         question_list.Add(false);
-                        //user.answer(1, 33, time_period_seconds, 0.5f);
+                        user.answer(1, 33, time_period_seconds, 0.5f);
                     }
                 }
 
@@ -218,7 +219,7 @@ namespace Educational_Software.Navigation_UI_Pages
                     info_message.Message = "Απαντήσατε σε πολλές ερωτήσεις λάθος. Προσπαθήστε ξανά.";
                     current_question_number = 10;
                 }
-                else if (question_list.Count(f => f == false) < question_list.Count(t => t == true) && time_delay >= 3)
+                else if (question_list.Count(f => f == false) < question_list.Count(t => t == true) && time_delay >= 2)
                 {
                     ((Button)sender).Content = "Επανάληψη";
                     info_message.Severity = InfoBarSeverity.Error;

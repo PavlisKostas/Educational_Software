@@ -32,18 +32,7 @@ namespace Educational_Software
     
     public sealed partial class MainWindow : Window
     {
-        // Attributes for Windowing - Start
-
-        IntPtr hWnd = IntPtr.Zero;
-        private SUBCLASSPROC SubClassDelegate;
-
-        int width = 450;
-        int height = 400;
-
-        [DllImport("dwmapi.dll", PreserveSig = true)]
-        public static extern int DwmSetWindowAttribute(IntPtr hwnd, int attr, ref bool attrValue, int attrSize);
-
-        // Attributes for Windowing - End
+        
 
         bool logged_in = false;
 
@@ -57,6 +46,7 @@ namespace Educational_Software
 
             TitleBar_Buttons_Appearance(appWindow.TitleBar);
 
+            GetMonitorDimensions();
 
             SizeWindow();
 
@@ -161,17 +151,49 @@ namespace Educational_Software
             Main_TeachingTip.IsOpen = false;
         }
 
+        // Attributes for Windowing - Start (System Configuration DON'T Change) //
 
-        // Methods for Window Resize - Start //
+        IntPtr hWnd = IntPtr.Zero;
+        private SUBCLASSPROC SubClassDelegate;
+
+        int width = 450;
+        int height = 400;
+
+        public const int WM_GETMINMAXINFO = 0x0024;
+
+        private const uint MONITOR_SELECTION = 2;
+
+        public delegate int SUBCLASSPROC(IntPtr hWnd, uint uMsg, IntPtr wParam, IntPtr lParam, IntPtr uIdSubclass, uint dwRefData);
+
+        [DllImport("Comctl32.dll", SetLastError = true)]
+        public static extern bool SetWindowSubclass(IntPtr hWnd, SUBCLASSPROC pfnSubclass, uint uIdSubclass, uint dwRefData);
+
+        [DllImport("Comctl32.dll", SetLastError = true)]
+        public static extern int DefSubclassProc(IntPtr hWnd, uint uMsg, IntPtr wParam, IntPtr lParam);
+
+
+        [DllImport("User32.dll")]
+        private static extern IntPtr MonitorFromWindow(IntPtr hwnd, uint dwFlags);
+
+        [DllImport("User32.dll", SetLastError = true)]
+        private static extern bool GetMonitorInfo(IntPtr hMonitor, ref MY_MONITOR_INFO lpmi);
+
+
+        // Attributes for Windowing - End //
+
+
+        // Methods for Window Resize - Start (System Configuration DON'T Change) //
 
         private async Task SizeWindow()
         {
+            /*
             var monitorInfo = default(DisplayMonitor);
             var displayList = await DeviceInformation.FindAllAsync
                               (DisplayMonitor.GetDeviceSelector());
 
             if (!displayList.Any())
                 return;
+
 
             if (displayList.Count > 1)
             {
@@ -185,10 +207,11 @@ namespace Educational_Software
                 monitorInfo = await DisplayMonitor.FromInterfaceIdAsync(displayList[0].Id);
                 Debug.WriteLine("<<ALERT>> Monitor 0: " + monitorInfo.NativeResolutionInRawPixels.Width + "x" + monitorInfo.NativeResolutionInRawPixels.Height);
             }
+            */
 
 
 
-            if (monitorInfo == null)
+            if (width == 0 || height == 0) //monitorInfo == null
             {
                 width = 450;
                 height = 400;
@@ -198,8 +221,11 @@ namespace Educational_Software
             }
             else
             {
-                double dheight = monitorInfo.NativeResolutionInRawPixels.Height / 1.5;
-                double dwidth = monitorInfo.NativeResolutionInRawPixels.Width / 1.4;
+                //double dheight = monitorInfo.NativeResolutionInRawPixels.Height / 1.5;
+                //double dwidth = monitorInfo.NativeResolutionInRawPixels.Width / 1.4;
+
+                double dheight = height / 1.35;
+                double dwidth = width / 1.2;
 
                 height = (int)dheight;
                 width = (int)dwidth;
@@ -222,21 +248,12 @@ namespace Educational_Software
                         Marshal.StructureToPtr(mmi, lParam, false);
                         return 0;
                     }
-                    break;
+                    
             }
             return DefSubclassProc(hWnd, uMsg, wParam, lParam);
         }
 
-        public delegate int SUBCLASSPROC(IntPtr hWnd, uint uMsg, IntPtr wParam, IntPtr lParam, IntPtr uIdSubclass, uint dwRefData);
-
-        [DllImport("Comctl32.dll", SetLastError = true)]
-        public static extern bool SetWindowSubclass(IntPtr hWnd, SUBCLASSPROC pfnSubclass, uint uIdSubclass, uint dwRefData);
-
-        [DllImport("Comctl32.dll", SetLastError = true)]
-        public static extern int DefSubclassProc(IntPtr hWnd, uint uMsg, IntPtr wParam, IntPtr lParam);
-
-        public const int WM_GETMINMAXINFO = 0x0024;
-
+        
         public struct MINMAXINFO
         {
             public System.Drawing.Point ptReserved;
@@ -244,6 +261,62 @@ namespace Educational_Software
             public System.Drawing.Point ptMaxPosition;
             public System.Drawing.Point ptMinTrackSize;
             public System.Drawing.Point ptMaxTrackSize;
+        }
+
+        private void GetMonitorDimensions()
+        {
+            
+            IntPtr monitor = MonitorFromWindow(hWnd, MONITOR_SELECTION);
+
+            if (monitor != IntPtr.Zero)
+            {
+                MY_MONITOR_INFO monitorInfo = new MY_MONITOR_INFO
+                {
+                    info_Size = Marshal.SizeOf(typeof(MY_MONITOR_INFO))
+                };
+
+                if (GetMonitorInfo(monitor, ref monitorInfo))
+                {
+                    
+                    int monitorWidth = monitorInfo.info_Monitor.window_right - monitorInfo.info_Monitor.window_left;
+                    int monitorHeight = monitorInfo.info_Monitor.window_bottom - monitorInfo.info_Monitor.window_top;
+
+                    width = monitorWidth;
+                    height = monitorHeight;
+                    
+                    Debug.WriteLine($"<<ALERT>> Monitor Dimensions: {monitorWidth}x{monitorHeight}");
+                }
+                else
+                {
+                    width = 0;
+                    height = 0;
+                }
+            }
+            else
+            {
+                width = 0;
+                height = 0;
+            }
+        }
+
+        
+
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Auto)]
+        public struct MY_MONITOR_INFO
+        {
+            public int info_Size;
+            public DIMENSIONS info_Monitor;
+            public DIMENSIONS info_Work;
+            public uint info_Flags;
+        }
+
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Auto)]
+        public struct DIMENSIONS
+        {
+            public int window_left;
+            public int window_top;
+            public int window_right;
+            public int window_bottom;
         }
 
         // Methods for Window Resize - End //

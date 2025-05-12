@@ -31,8 +31,33 @@ namespace Educational_Software.Models
 
         public static bool add_answer(int studentId, int section, int question, int time, double rating)
         {
-            string insertQuery = $"INSERT INTO Answer (studentId, section, question, time, rating) VALUES ({studentId}, {section}, {question}, {time}, {rating})";
-            return execute_query(connectionString, insertQuery);
+            string insertQuery = $"INSERT INTO Answer (studentId, section, question, time, rating) VALUES ({studentId}, {section}, {question}, {time}, @rating)";
+            //return execute_query(connectionString, insertQuery);
+
+            try
+            {
+                using (var connection = new SQLiteConnection(connectionString))
+                {
+                    connection.Open();
+                    SQLiteCommand com = connection.CreateCommand();
+                    com.CommandText = insertQuery;
+                    com.Parameters.AddWithValue("rating", rating);
+                    com.ExecuteNonQuery();
+                    connection.Close();
+                }
+                return true;
+            }
+            catch (SQLiteException ex)
+            {
+                Debug.WriteLine($"SQLite Error: {ex.Message}");
+                return false;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"General Error: {ex.Message}");
+                return false;
+            }
+
         }
 
         private static bool execute_query(string connectionString, string query){

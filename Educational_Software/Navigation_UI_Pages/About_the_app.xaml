@@ -10,7 +10,44 @@
 
     <Grid>
 
-        <TextBlock Text="This is the About Page" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" FontWeight="SemiBold"/>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Spacing="15" HorizontalAlignment="Center" Margin="0, 15,0,5">
+            <FontIcon Glyph="&#xF167;" FontSize="42"/>
+            <TextBlock Text="Σχετικά με την εφαρμογή" FontSize="25" FontWeight="SemiBold" VerticalAlignment="Center"/>
+        </StackPanel>
+
+        <ScrollViewer Grid.Row="1" ZoomMode="Disabled"
+        IsTabStop="True" IsVerticalScrollChainingEnabled="True"  
+        HorizontalAlignment="Center" VerticalAlignment="Center"  
+        HorizontalScrollMode="Disabled" HorizontalScrollBarVisibility="Disabled"  
+        VerticalScrollMode="Enabled" VerticalScrollBarVisibility="Auto"
+        Margin="0, 20, 0, 20">
+
+            <Border Grid.Column="1" CornerRadius="15" BorderThickness="1" BorderBrush="LightGray" Padding="15" Background="Linen" Margin="60, 0, 60, 0">
+                <StackPanel Spacing="13">
+                    <TextBlock TextAlignment="Justify" TextWrapping="WrapWholeWords" FontSize="16" Text="&#x0020; &#x0020; &#x0020; &#x0020; &#x0020; Η συγκεκριμένη εφαρμογή αναπτύχθηκε στα πλαίσια του μαθήματος «Εκπαιδευτικό Λογισμικό» του Τμήματος Πληροφορικής του Πανεπιστημίου Πειραιώς. Υλοποιήθηκε κατά τη διάρκεια του Ακαδημαϊκού Έτους 2024 - 2025 και κεντρικό θέμα της είναι η εξερεύνηση της πόλης της Αλεξανδρούπολης και της ευρύτερης περιοχής από παιδιά ηλικίας 12 - 14 ετών κάνοντας χρήση μεθόδων προσαρμοστικής μάθησης. Μέσω της προσαρμοστικής μάθησης ο εκπαιδευόμενος απαντάει ερωτήσεις σε Quiz και Τεστ, οι οποίες διαφοροποιούνται ανάλογα με τον βαθμό κατανόησης της ύλης που του παρουσιάζεται σε κάθε ενότητα. Επίσης, ξεκλειδώνει νέες ενότητες μόνο όταν έχει κατανοήσει επαρκώς το υλικό που του είναι διαθέσιμο και έχει απαντήσει ορθά στην πλειοψηφιά των ερωτήσεων των Τεστς. Η συγκεκριμένη εφαρμογή αποτελεί ένα πρότυπο υλοποίησης εκπαιδευτικού λογισμικού το οποίο παρουσιάζει μια φιλική, εύχρηστη και μοντέρνα εμπειρία χρήσης καθώς και προηγμένους αλγορίθμους προσαρμοστικής μάθησης. "/>
+                    <StackPanel Spacing="8" Margin="0, 15, 0 , 0 ">
+                        <FontIcon Glyph="&#xE902;" HorizontalAlignment="Center" FontSize="50"/>
+                        <TextBlock TextAlignment="Center" FontSize="15" TextWrapping="WrapWholeWords" Text="Η ΟΜΑΔΑ ΤΩΝ ΦΟΙΤΗΤΩΝ" FontWeight="SemiBold" />
+                    </StackPanel>
+                    <StackPanel HorizontalAlignment="Center" Spacing="5">
+                        <TextBlock HorizontalAlignment="Center" Text="Κωνσταντίνος Παυλής" FontWeight="SemiBold"/>
+                        <TextBlock HorizontalAlignment="Center" Text="Θεοφάνης Τζουμάκας" FontWeight="SemiBold"/>
+                        <TextBlock HorizontalAlignment="Center" Text="Μιχαήλ-Παναγιώτης Καπετάνιος" FontWeight="SemiBold"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+        </ScrollViewer>
+
+        <StackPanel Grid.Row="2" Padding="0, 15,0,15" Background="{StaticResource AcrylicBackgroundFillColorBaseBrush}">
+            <TextBlock Text="Developed with ❤️ for Department of Informatics - University of Piraeus" FontSize="15" FontWeight="SemiBold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </StackPanel>
+
     </Grid>
 </Page>

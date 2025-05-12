@@ -34,6 +34,7 @@ namespace Educational_Software.Navigation_UI_Pages
             {
                 user = e.Parameter as User;
             }
+            float score = user.get_answers().Sum(a => a.rating);
         }
 
         private void PositiveAnswer_checkbox_checked(object sender, RoutedEventArgs e)
