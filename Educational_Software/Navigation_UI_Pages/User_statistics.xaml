@@ -38,14 +38,14 @@
 
                 <StackPanel Orientation="Horizontal" Spacing="8" Margin="0, 0, 0, 20" HorizontalAlignment="Center">
                     <TextBlock Text="Χρήστης:" FontSize="20"/>
-                    <TextBlock x:Name="user_full_name" Text="Κωνσταντίνος Παυλής" FontSize="20"/>
+                    <TextBlock x:Name="user_full_name" Text="" FontSize="20"/>
                 </StackPanel>
 
                 <StackPanel Grid.Row="1" HorizontalAlignment="Center" Spacing="10" Margin="0, 0, 0, 45">
                     <TextBlock Text="✔️ Ενότητα που έχει φτάσει" HorizontalAlignment="Center" FontSize="20" FontWeight="SemiBold" Margin="0, 0, 0, 20"/>
                     <Border Grid.Column="0" Grid.Row="1" CornerRadius="8" BorderThickness="1" BorderBrush="LightGray" Padding="15" Background="{StaticResource SolidBackgroundFillColorSecondaryBrush}" >
                         <StackPanel Spacing="10">
-                            <ProgressBar Width="160" Height="20" Value="2" Maximum="3" HorizontalAlignment="Center" />
+                            <ProgressBar x:Name="sectionProgressBar" Width="160" Height="20" Value="2" Maximum="3" HorizontalAlignment="Center" />
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                                 <TextBlock Text="Ενότητα " HorizontalAlignment="Center" FontSize="19" FontWeight="Bold"/>
                                 <TextBlock x:Name="current_unit" Text="2" HorizontalAlignment="Center" FontSize="19" FontWeight="Bold" Margin="10, 0,0,0"/>
@@ -75,7 +75,7 @@
                                 <TextBlock Text="📝" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35" Margin="-15, 0, 0, 0" />
                                 <TextBlock Text="Τεστ 1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="19" FontWeight="SemiBold" />
                             </StackPanel>
-                            <ProgressBar Width="160" Height="20" Value="2" Maximum="3" HorizontalAlignment="Center" />
+                            <ProgressBar x:Name="progressBarTest1" Width="160" Height="20" Value="2" Maximum="3" HorizontalAlignment="Center" />
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                                 <TextBlock Text="Βαθμολογία " HorizontalAlignment="Center" FontSize="19" FontWeight="Bold"/>
                                 <TextBlock x:Name="score_test_1" Text="2" HorizontalAlignment="Center" FontSize="19" FontWeight="Bold" Margin="10, 0,0,0"/>
@@ -90,7 +90,7 @@
                                 <TextBlock Text="📝" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35" Margin="-15, 0, 0, 0" />
                                 <TextBlock Text="Τεστ 2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="19" FontWeight="SemiBold" />
                             </StackPanel>
-                            <ProgressBar Width="160" Height="20" Value="1" Maximum="3" HorizontalAlignment="Center" />
+                            <ProgressBar x:Name="progressBarTest2" Width="160" Height="20" Value="1" Maximum="3" HorizontalAlignment="Center" />
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                                 <TextBlock Text="Βαθμολογία " HorizontalAlignment="Center" FontSize="19" FontWeight="Bold"/>
                                 <TextBlock x:Name="score_test_2" Text="1" HorizontalAlignment="Center" FontSize="19" FontWeight="Bold" Margin="10, 0,0,0"/>
@@ -105,7 +105,7 @@
                                 <TextBlock Text="📝" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35" Margin="-15, 0, 0, 0" />
                                 <TextBlock Text="Τεστ 3" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="19" FontWeight="SemiBold" />
                             </StackPanel>
-                            <ProgressBar Width="160" Height="20" Value="3" Maximum="3" HorizontalAlignment="Center" ShowError="True" />
+                            <ProgressBar x:Name="progressBarTest3" Width="160" Height="20" Value="3" Maximum="3" HorizontalAlignment="Center" ShowError="True" />
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                                 <TextBlock Text="Βαθμολογία " HorizontalAlignment="Center" FontSize="19" FontWeight="Bold"/>
                                 <TextBlock x:Name="score_test_3" Text="-" HorizontalAlignment="Center" FontSize="19" FontWeight="Bold" Margin="10, 0,0,0"/>

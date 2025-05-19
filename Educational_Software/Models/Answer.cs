@@ -13,14 +13,16 @@ namespace Educational_Software.Models
         public int question { get; }
         public int time { get; }
         public float rating { get; }
+        public bool userAnswer { get; }
 
-        public Answer(int studentId, int section, int question, int time, float rating)
+        public Answer(int studentId, int section, int question, int time, float rating, bool userAnswer)
         {
             this.studentId = studentId;
             this.section = section;
             this.question = question;
             this.time = time;
             this.rating = rating;
+            this.userAnswer = userAnswer;
         }
     }
 }

@@ -108,19 +108,19 @@
                         <!-- Continue of the login process -->
                         <TextBlock Text="Απαντήστε στις παρακάτω ερωτήσεις..." FontSize="17" FontWeight="SemiBold" HorizontalAlignment="Center" Margin="0, 0, 0, 12"/>
                         <RadioButtons x:Name="sign_up_radio_1" Header="Πόσο καλά γνωρίζετε την Αλεξανδρούπολη;" MaxColumns="3">
-                            <RadioButton Content="Μέτρια" />
-                            <RadioButton Content="Καλά" />
-                            <RadioButton Content="Πολύ καλά" />
+                            <RadioButton x:Name="sign_up_radio_1_answer1" Content="Μέτρια" />
+                            <RadioButton x:Name="sign_up_radio_1_answer2" Content="Καλά" />
+                            <RadioButton x:Name="sign_up_radio_1_answer3" Content="Πολύ καλά" />
                         </RadioButtons>
                         <RadioButtons x:Name="sign_up_radio_2" Header="Πού βρίσκεται η Αλεξανδρούπολη;" MaxColumns="3">
-                            <RadioButton Content="Νότια Ελλάδα" />
-                            <RadioButton Content="Βόρεια Ελλάδα" />
-                            <RadioButton Content="Κεντρική Ελλάδα" />
+                            <RadioButton x:Name="sign_up_radio_2_answer1" Content="Νότια Ελλάδα" />
+                            <RadioButton x:Name="sign_up_radio_2_answer2" Content="Βόρεια Ελλάδα" />
+                            <RadioButton x:Name="sign_up_radio_2_answer3" Content="Κεντρική Ελλάδα" />
                         </RadioButtons>
                         <RadioButtons x:Name="sign_up_radio_3" Header="Τι είναι η Αλεξανδρούπολη;" MaxColumns="3">
-                            <RadioButton Content="Πόλη" />
-                            <RadioButton Content="Κωμόπολη" />
-                            <RadioButton Content="Χωριό" />
+                            <RadioButton x:Name="sign_up_radio_3_answer1" Content="Πόλη" />
+                            <RadioButton x:Name="sign_up_radio_3_answer2" Content="Κωμόπολη" />
+                            <RadioButton x:Name="sign_up_radio_3_answer3" Content="Χωριό" />
                         </RadioButtons>
 
                         <Grid Margin="0, 12, 0 , 0">

@@ -42,13 +42,15 @@
                     
                     <TextBlock Text="1." FontSize="50" FontWeight="SemiBold" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Margin="0, 0, 20, 0" />
                     <Border Grid.Column="1" CornerRadius="12" BorderThickness="1" BorderBrush="Aquamarine" Padding="15" Background="AliceBlue" >
-
+                        <StackPanel>
                         <RadioButtons x:Name="question_1_radio" Header="Πού βρίσκεται ο φάρος της Αλεξανδρούπολης;" MaxColumns="3" >
                             <RadioButton x:Name="question_1_radio_answer1" Content="Στη δυτική πλευρά του λιμανιού" />
                             <RadioButton x:Name="question_1_radio_answer2" Content="Στην ανατολική πλευρά του λιμανιού" />
                             <RadioButton x:Name="question_1_radio_answer3" Content="Στο κέντρο της πόλης" />
                         </RadioButtons>
-                     
+                        <TextBlock x:Name="question_1_empty" Text="Θέση Ερώτησης 1" FontSize="20" FontWeight="SemiLight" Foreground="DimGray" HorizontalAlignment="Center" Visibility="Collapsed"/>
+                        <TextBlock x:Name="question_1_answered" Text="Απαντήθηκε" FontSize="20" FontWeight="SemiLight" Foreground="DimGray" HorizontalAlignment="Center" Visibility="Collapsed"/>
+                        </StackPanel>
                     </Border>
                 </Grid>
                 <Grid>
@@ -71,6 +73,7 @@
                                 <RadioButton x:Name="question_2_radio2_answer3" Content="Την 1η Ιουνίου 1974" />
                             </RadioButtons>
                             <TextBlock x:Name="question_2_empty" Text="Θέση Ερώτησης 2" FontSize="20" FontWeight="SemiLight" Foreground="DimGray" HorizontalAlignment="Center" Visibility="Visible"/>
+                            <TextBlock x:Name="question_2_answered" Text="Απαντήθηκε" FontSize="20" FontWeight="SemiLight" Foreground="DimGray" HorizontalAlignment="Center" Visibility="Collapsed"/>
                         </StackPanel>
                     </Border>
                 </Grid>
@@ -93,12 +96,13 @@
                                 <RadioButton x:Name="question_3_radio2_answer2" Content="Με ασετιλίνη" />
                                 <RadioButton x:Name="question_3_radio2_answer3" Content="Με κάρβουνο" />
                             </RadioButtons>
-                            <RadioButtons x:Name="question_3_radio_3" Header="Ποια είναι η εμβέλεια της φωτεινής δέσμης του φάρου;" MaxColumns="3" Visibility="Collapsed">
-                                <RadioButton x:Name="question_3_radio3_answer1" Content="12 ναυτικά μίλια" />
-                                <RadioButton x:Name="question_3_radio3_answer2" Content="18 ναυτικά μίλια" />
-                                <RadioButton x:Name="question_3_radio3_answer3" Content="24 ναυτικά μίλια" />
+                            <RadioButtons x:Name="question_3_radio_3" Header="Ποιο από τα παρακάτω δεν αποτελεί χαρακτηριστικό του φάρου της Αλεξανδρούπολης σύμφωνα με το κείμενο;" MaxColumns="3" Visibility="Collapsed">
+                                <RadioButton x:Name="question_3_radio3_answer1" Content="Διαθέτει εφεδρικό σύστημα λειτουργίας σε περίπτωση διακοπής ρεύματος" />
+                                <RadioButton x:Name="question_3_radio3_answer2" Content="Εκπέμπει τρεις λευκές αναλαμπές κάθε 15 δευτερόλεπτα" />
+                                <RadioButton x:Name="question_3_radio3_answer3" Content="Έχει ύψος 18 μέτρα από το επίπεδο της θάλασσας" />
                             </RadioButtons>
                             <TextBlock x:Name="question_3_empty" Text="Θέση Ερώτησης 3" FontSize="20" FontWeight="SemiLight" Foreground="DimGray" HorizontalAlignment="Center" Visibility="Visible"/>
+                            <TextBlock x:Name="question_3_answered" Text="Απαντήθηκε" FontSize="20" FontWeight="SemiLight" Foreground="DimGray" HorizontalAlignment="Center" Visibility="Collapsed"/>
                         </StackPanel>
                     </Border>
                 </Grid>
@@ -125,7 +129,7 @@
                 <TextBlock Text="Επέλεξε απάντηση και πάτησε το κουμπί για να συνεχίσεις" HorizontalAlignment="Center"/>
             </StackPanel>
 
-            <Button Grid.Column="1" VerticalAlignment="Bottom" Content="Επόμενη" Style="{StaticResource AccentButtonStyle}" Width="170" Click="Next_step"  />
+            <Button x:Name="NextButton" Grid.Column="1" VerticalAlignment="Bottom" Content="Επόμενη" Style="{StaticResource AccentButtonStyle}" Width="170" Click="Next_step"  />
         </Grid>
 
     </Grid>

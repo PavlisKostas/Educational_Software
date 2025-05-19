@@ -149,6 +149,18 @@ namespace Educational_Software
             Debug.WriteLine("successful signup going to sign in");
 
             Main_TeachingTip.IsOpen = false;
+
+            //user.answer(1, 0, 0, 3, true);
+            if((bool)sign_up_radio_1_answer3.IsChecked && (bool)sign_up_radio_2_answer2.IsChecked && (bool)sign_up_radio_3_answer1.IsChecked)
+            {
+                user.answer(1, 10, 0, 3f, true);
+                user.answer(1, 21, 0, 3f, true);
+                user.answer(1, 31, 0, 3f, true);
+                Debug.WriteLine("sign up quiz completed");
+                System.Diagnostics.Debug.WriteLine("OI APANTHSEIS EINAI" + user.get_answers().Count.ToString());
+                Debug.WriteLine("o xrhsths einai" + user.name);
+
+            }
         }
 
         // Attributes for Windowing - Start (System Configuration DON'T Change) //

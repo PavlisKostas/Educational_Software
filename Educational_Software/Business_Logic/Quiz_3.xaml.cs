@@ -41,6 +41,132 @@ namespace Educational_Software.Navigation_UI_Pages
                 user = e.Parameter as User;
             }
             List<Answer> answer_list = user.get_answers();
+            if (user.get_answers().Count(a => a.section == 3 && a.question == 10) > 0)
+            {
+                question_1_radio.IsEnabled = false;
+                question_1_radio.Visibility = Visibility.Collapsed;
+                question_1_empty.Visibility = Visibility.Visible;
+                current_question_number = 2;
+                question_1_empty.Visibility = Visibility.Collapsed;
+                question_1_answered.Visibility = Visibility.Visible;
+
+                if (user.get_answers().Count(a => a.section == 3 && (a.question == 21 || a.question == 22)) == 0)
+                {
+                    if (user.get_answers().Count(a => a.section == 3 && a.question == 10 && a.rating == 1f) > 0)
+                    {
+                        question_2_radio_1.Visibility = Visibility.Visible;
+                        question_2_radio_1.IsEnabled = true;
+                        question_list.Add(true);
+                    }
+                    else if (user.get_answers().Count(a => a.section == 1 && a.question == 10 && a.rating == 0.5f) > 0)
+                    {
+                        question_2_radio_2.Visibility = Visibility.Visible;
+                        question_2_radio_2.IsEnabled = true;
+                        question_list.Add(true);
+                        time_delay = 1;
+                    }
+                    else
+                    {
+                        question_2_radio_2.Visibility = Visibility.Visible;
+                        question_2_radio_2.IsEnabled = true;
+                        question_list.Add(false);
+                    }
+                }
+                else if (user.get_answers().Count(a => a.section == 3 && (a.question == 31 || a.question == 32 || a.question == 33)) == 0)
+                {
+                    question_2_empty.Visibility = Visibility.Collapsed;
+                    question_2_answered.Visibility = Visibility.Visible;
+                    NextButton.Content = "Ολοκλήρωση";
+                    current_question_number = 3;
+                    var answer_question = user.get_answers().FirstOrDefault(a => a.question == 21 || a.question == 22);
+
+                    if (answer_question.question == 21 && answer_question.rating == 1f)
+                    {
+                        question_3_radio_1.Visibility = Visibility.Visible;
+                        question_3_radio_1.IsEnabled = true;
+                        question_list.Add(true);
+                        question_list.Add(true);
+                    }
+                    else if (answer_question.question == 21 && answer_question.rating == 0.5f)
+                    {
+                        question_3_radio_2.Visibility = Visibility.Visible;
+                        question_3_radio_2.IsEnabled = true;
+                        question_list.Add(true);
+                        question_list.Add(true);
+                        time_delay = 2;
+                    }
+                    else if (answer_question.question == 21 && answer_question.rating == 0f)
+                    {
+                        question_3_radio_2.Visibility = Visibility.Visible;
+                        question_3_radio_2.IsEnabled = true;
+                        question_list.Add(true);
+                        question_list.Add(false);
+                    }
+                    else if (answer_question.question == 22 && answer_question.rating == 1f)
+                    {
+                        question_3_radio_2.Visibility = Visibility.Visible;
+                        question_3_radio_2.IsEnabled = true;
+                        var answer_question1 = user.get_answers().FirstOrDefault(a => a.question == 10);
+                        if (answer_question1.rating > 0f)
+                        {
+                            question_list.Add(true);
+                        }
+                        else
+                        {
+                            question_list.Add(false);
+                        }
+                        question_list.Add(true);
+                    }
+                    else if (answer_question.question == 22 && answer_question.rating == 0.5f)
+                    {
+                        question_3_radio_3.Visibility = Visibility.Visible;
+                        question_3_radio_3.IsEnabled = true;
+                        var answer_question1 = user.get_answers().FirstOrDefault(a => a.question == 10);
+                        if (answer_question1.rating > 0f)
+                        {
+                            question_list.Add(true);
+                        }
+                        else
+                        {
+                            question_list.Add(false);
+                        }
+                        question_list.Add(true);
+                        time_delay = 2;
+                    }
+                    else
+                    {
+                        //current_question_number = 0;
+                        question_3_radio_3.Visibility = Visibility.Visible;
+                        question_3_radio_3.IsEnabled = true;
+                        var answer_question1 = user.get_answers().FirstOrDefault(a => a.question == 10);
+                        if (answer_question1.rating > 0f)
+                        {
+                            question_list.Add(true);
+                        }
+                        else
+                        {
+                            question_list.Add(false);
+                        }
+                        question_list.Add(false);
+                    }
+                }
+                else
+                {
+                    question_2_empty.Visibility = Visibility.Collapsed;
+                    question_2_answered.Visibility = Visibility.Visible;
+                    question_3_answered.Visibility = Visibility.Visible;
+                    question_3_empty.Visibility = Visibility.Collapsed;
+                    NextButton.IsEnabled = false;
+                    NextButton.Visibility = Visibility.Collapsed;
+                    System.Diagnostics.Debug.WriteLine("AAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+                    info_message.Severity = InfoBarSeverity.Success;
+                    info_message.Title = "Επιτυχία";
+                    info_message.Message = "Συγχαρητήρια! Περάσατε τη δοκιμασία !";
+                    //current_question_number = 11;
+
+                    System.Diagnostics.Debug.WriteLine("AAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+                }
+            }
         }
 
         private void Next_step(object sender, RoutedEventArgs e)
@@ -55,27 +181,27 @@ namespace Educational_Software.Navigation_UI_Pages
                 question_1_radio.IsEnabled = false;
                 question_2_empty.Visibility = Visibility.Collapsed;
 
-                if ((bool)question_1_radio_answer3.IsChecked && time_period_seconds < answer_timer)
+                if ((bool)question_1_radio_answer1.IsChecked && time_period_seconds < answer_timer)
                 {
                     question_2_radio_1.Visibility = Visibility.Visible;
                     question_2_radio_1.IsEnabled = true;
                     question_list.Add(true);
-                    //user.answer(1, 10, time_period_seconds, 1.5f);
+                    user.answer(3, 10, time_period_seconds, 1f, true);
                 }
-                else if ((bool)question_1_radio_answer3.IsChecked && time_period_seconds >= answer_timer)
+                else if ((bool)question_1_radio_answer1.IsChecked && time_period_seconds >= answer_timer)
                 {
                     question_2_radio_2.Visibility = Visibility.Visible;
                     question_2_radio_2.IsEnabled = true;
                     question_list.Add(true);
                     time_delay++;
-                    //user.answer(1,10, time_period_seconds, 1f);
+                    user.answer(3,10, time_period_seconds, 0.5f, true);
                 }
                 else
                 {
                     question_2_radio_2.Visibility = Visibility.Visible;
                     question_2_radio_2.IsEnabled = true;
                     question_list.Add(false);
-                    //user.answer(1, 10, time_period_seconds, 0.5f);
+                    user.answer(3, 10, time_period_seconds, 0f, false);
                 }
                 current_question_number++;
                 question_number.Text = current_question_number.ToString();
@@ -90,53 +216,53 @@ namespace Educational_Software.Navigation_UI_Pages
                 if (question_list[0] == true && time_delay == 0)
                 {
                     question_2_radio_1.IsEnabled = false;
-                    if ((bool)question_2_radio1_answer3.IsChecked && time_period_seconds < answer_timer)
+                    if ((bool)question_2_radio1_answer2.IsChecked && time_period_seconds < answer_timer)
                     {
                         question_3_radio_1.Visibility = Visibility.Visible;
                         question_3_radio_1.IsEnabled = true;
                         question_list.Add(true);
-                        user.answer(1, 21, time_period_seconds, 1.5f);
+                        user.answer(3, 21, time_period_seconds, 1f, true);
                     }
-                    else if ((bool)question_2_radio1_answer3.IsChecked && time_period_seconds >= answer_timer)
+                    else if ((bool)question_2_radio1_answer2.IsChecked && time_period_seconds >= answer_timer)
                     {
                         question_3_radio_2.Visibility = Visibility.Visible;
                         question_3_radio_2.IsEnabled = true;
                         question_list.Add(true);
                         time_delay++;
-                        user.answer(1, 21, time_period_seconds, 1f);
+                        user.answer(3, 21, time_period_seconds, 0.5f, true);
                     }
                     else
                     {
                         question_3_radio_2.Visibility = Visibility.Visible;
                         question_3_radio_2.IsEnabled = true;
                         question_list.Add(false);
-                        user.answer(1, 21, time_period_seconds, 0.5f);
+                        user.answer(3, 21, time_period_seconds, 0f, false);
                     }
                 }
                 else
                 {
                     question_2_radio_2.IsEnabled = false;
-                    if ((bool)question_2_radio2_answer2.IsChecked && time_period_seconds < answer_timer)
+                    if ((bool)question_2_radio2_answer1.IsChecked && time_period_seconds < answer_timer)
                     {
                         question_3_radio_2.Visibility = Visibility.Visible;
                         question_3_radio_2.IsEnabled = true;
                         question_list.Add(true);
-                        user.answer(1, 22, time_period_seconds, 1.5f);
+                        user.answer(3, 22, time_period_seconds, 1f, true);
                     }
-                    else if ((bool)question_2_radio2_answer2.IsChecked && time_period_seconds >= answer_timer)
+                    else if ((bool)question_2_radio2_answer1.IsChecked && time_period_seconds >= answer_timer)
                     {
                         question_3_radio_3.Visibility = Visibility.Visible;
                         question_3_radio_3.IsEnabled = true;
                         question_list.Add(true);
                         time_delay++;
-                        user.answer(1, 22, time_period_seconds, 1f);
+                        user.answer(3, 22, time_period_seconds, 0.5f, true);
                     }
                     else
                     {
                         question_3_radio_3.Visibility = Visibility.Visible;
                         question_3_radio_3.IsEnabled = true;
                         question_list.Add(false);
-                        user.answer(1, 22, time_period_seconds, 0.5f);
+                        user.answer(3, 22, time_period_seconds, 0f, false);
                     }
                 }
 
@@ -155,58 +281,58 @@ namespace Educational_Software.Navigation_UI_Pages
                     if ((bool)question_3_radio1_answer3.IsChecked && time_period_seconds < answer_timer)
                     {
                         question_list.Add(true);
-                        user.answer(1, 31, time_period_seconds, 1.5f);
+                        user.answer(3, 31, time_period_seconds, 1f, true);
                     }
                     else if ((bool)question_3_radio1_answer3.IsChecked && time_period_seconds >= answer_timer)
                     {
                         question_list.Add(true);
                         time_delay++;
-                        user.answer(1, 31, time_period_seconds, 1f);
+                        user.answer(3, 31, time_period_seconds, 0.5f, true);
                     }
                     else
                     {
                         question_list.Add(false);
-                        user.answer(1, 31, time_period_seconds, 0.5f);
+                        user.answer(3, 31, time_period_seconds, 0f, false);
                     }
                 }
                 else if ((question_list[0] == true && question_list[1] == false) || (question_list[0] == false && question_list[1] == true) || (question_list[0] == true && question_list[1] == true && time_delay == 1))
                 {
                     question_3_radio_2.IsEnabled = false;
-                    if ((bool)question_3_radio2_answer2.IsChecked && time_period_seconds < answer_timer)
+                    if ((bool)question_3_radio2_answer3.IsChecked && time_period_seconds < answer_timer)
                     {
                         question_list.Add(true);
-                        user.answer(1, 32, time_period_seconds, 1.5f);
+                        user.answer(3, 32, time_period_seconds, 1f, true);
                     }
-                    else if ((bool)question_3_radio2_answer2.IsChecked && time_period_seconds >= answer_timer)
+                    else if ((bool)question_3_radio2_answer3.IsChecked && time_period_seconds >= answer_timer)
                     {
                         question_list.Add(true);
                         time_delay++;
-                        user.answer(1, 32, time_period_seconds, 1f);
+                        user.answer(3, 32, time_period_seconds, 0.5f, true);
                     }
                     else
                     {
                         question_list.Add(false);
-                        user.answer(1, 32, time_period_seconds, 0.5f);
+                        user.answer(3, 32, time_period_seconds, 0f, false);
                     }
                 }
                 else if (question_list[0] == false && question_list[1] == false || (question_list[0] == true && question_list[1] == true && time_delay == 2))
                 {
                     question_3_radio_3.IsEnabled = false;
-                    if ((bool)question_3_radio3_answer3.IsChecked && time_period_seconds < answer_timer)
+                    if ((bool)question_3_radio3_answer2.IsChecked && time_period_seconds < answer_timer)
                     {
                         question_list.Add(true);
-                        user.answer(1, 33, time_period_seconds, 1.5f);
+                        user.answer(3, 33, time_period_seconds, 1f, true);
                     }
-                    else if ((bool)question_3_radio3_answer3.IsChecked && time_period_seconds >= answer_timer)
+                    else if ((bool)question_3_radio3_answer2.IsChecked && time_period_seconds >= answer_timer)
                     {
                         question_list.Add(true);
                         time_delay++;
-                        user.answer(1, 33, time_period_seconds, 1f);
+                        user.answer(3, 33, time_period_seconds, 0.5f, true);
                     }
                     else
                     {
                         question_list.Add(false);
-                        user.answer(1, 33, time_period_seconds, 0.5f);
+                        user.answer(3, 33, time_period_seconds, 0f, false);
                     }
                 }
 
@@ -218,6 +344,7 @@ namespace Educational_Software.Navigation_UI_Pages
                     info_message.Title = "Αποτυχία";
                     info_message.Message = "Απαντήσατε σε πολλές ερωτήσεις λάθος. Προσπαθήστε ξανά.";
                     current_question_number = 10;
+                    user.remove_answer(3);
                 }
                 else if (question_list.Count(f => f == false) < question_list.Count(t => t == true) && time_delay >= 2)
                 {
@@ -226,6 +353,7 @@ namespace Educational_Software.Navigation_UI_Pages
                     info_message.Title = "Αποτυχία";
                     info_message.Message = "Ίσως δυσκλοευτήκατε πολύ στις απαντήσεις. Προσπαθήστε ξανά.";
                     current_question_number = 10;
+                    user.remove_answer(3);
                 }
                 else
                 {

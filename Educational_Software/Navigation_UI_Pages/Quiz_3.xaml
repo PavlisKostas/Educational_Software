@@ -42,13 +42,15 @@
 
                     <TextBlock Text="1." FontSize="50" FontWeight="SemiBold" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Margin="0, 0, 20, 0" />
                     <Border Grid.Column="1" CornerRadius="12" BorderThickness="1" BorderBrush="Aquamarine" Padding="15" Background="AliceBlue" >
-
-                        <RadioButtons x:Name="question_1_radio" Header="Ερώτηση για την Αλεξανδρούπολη No 1..." MaxColumns="3" >
-                            <RadioButton x:Name="question_1_radio_answer1" Content="Απάντηση 1" />
-                            <RadioButton x:Name="question_1_radio_answer2" Content="Απάντηση 2" />
-                            <RadioButton x:Name="question_1_radio_answer3" Content="Απάντηση 3" />
-                        </RadioButtons>
-
+                        <StackPanel>
+                            <RadioButtons x:Name="question_1_radio" Header="Ποιο νεοκλασικό κτίριο της Αλεξανδρούπολης χρηματοδοτήθηκε από τον Γεώργιο Ζαρίφη;" MaxColumns="3" >
+                                <RadioButton x:Name="question_1_radio_answer1" Content="Η Ζαρίφειος Παιδαγωγική Ακαδημία" />
+                                <RadioButton x:Name="question_1_radio_answer2" Content="Το κτίριο του Σιδηροδρομικού Σταθμού" />
+                                <RadioButton x:Name="question_1_radio_answer3" Content="Το Καπνομάγαζο" />
+                            </RadioButtons>
+                            <TextBlock x:Name="question_1_empty" Text="Θέση Ερώτησης 1" FontSize="20" FontWeight="SemiLight" Foreground="DimGray" HorizontalAlignment="Center" Visibility="Collapsed"/>
+                            <TextBlock x:Name="question_1_answered" Text="Απαντήθηκε" FontSize="20" FontWeight="SemiLight" Foreground="DimGray" HorizontalAlignment="Center" Visibility="Collapsed"/>
+                        </StackPanel>
                     </Border>
                 </Grid>
                 <Grid>
@@ -60,17 +62,18 @@
                     <TextBlock Text="2." FontSize="50" FontWeight="SemiBold" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Margin="0, 0, 20, 0" />
                     <Border Grid.Column="1" CornerRadius="12" BorderThickness="1" BorderBrush="Aquamarine" Padding="15" Background="AliceBlue">
                         <StackPanel>
-                            <RadioButtons x:Name="question_2_radio_1" Header="Ερώτηση για την Αλεξανδρούπολη No 2..." MaxColumns="3" Visibility="Collapsed">
-                                <RadioButton x:Name="question_2_radio1_answer1" Content="Απάντηση 1" />
-                                <RadioButton x:Name="question_2_radio1_answer2" Content="Απάντηση 2" />
-                                <RadioButton x:Name="question_2_radio1_answer3" Content="Απάντηση 3" />
+                            <RadioButtons x:Name="question_2_radio_1" Header="Ποια χρήση είχε αρχικά το κτίριο που σήμερα ονομάζεται «Καπνομάγαζο»" MaxColumns="3" Visibility="Collapsed">
+                                <RadioButton x:Name="question_2_radio1_answer1" Content="Βιοτεχνία επεξεργασίας καπνού" />
+                                <RadioButton x:Name="question_2_radio1_answer2" Content="Σχολείο Αρρένων των Καθολικών" />
+                                <RadioButton x:Name="question_2_radio1_answer3" Content="Οθωμανικό τελωνείο" />
                             </RadioButtons>
-                            <RadioButtons x:Name="question_2_radio_2" Header="Ερώτηση για την Αλεξανδρούπολη No 2.2..." MaxColumns="3" Visibility="Collapsed" >
-                                <RadioButton x:Name="question_2_radio2_answer1" Content="Απάντηση 1" />
-                                <RadioButton x:Name="question_2_radio2_answer2" Content="Απάντηση 2" />
-                                <RadioButton x:Name="question_2_radio2_answer3" Content="Απάντηση 3" />
+                            <RadioButtons x:Name="question_2_radio_2" Header="Ποιο ήταν το αρχικό όνομα της Αλεξανδρούπολης;" MaxColumns="3" Visibility="Collapsed" >
+                                <RadioButton x:Name="question_2_radio2_answer1" Content="Δεδέαγατς" />
+                                <RadioButton x:Name="question_2_radio2_answer2" Content="Ανδριανούπολη" />
+                                <RadioButton x:Name="question_2_radio2_answer3" Content="Φιλιππούπολη" />
                             </RadioButtons>
                             <TextBlock x:Name="question_2_empty" Text="Θέση Ερώτησης 2" FontSize="20" FontWeight="SemiLight" Foreground="DimGray" HorizontalAlignment="Center" Visibility="Visible"/>
+                            <TextBlock x:Name="question_2_answered" Text="Απαντήθηκε" FontSize="20" FontWeight="SemiLight" Foreground="DimGray" HorizontalAlignment="Center" Visibility="Collapsed"/>
                         </StackPanel>
                     </Border>
                 </Grid>
@@ -83,22 +86,23 @@
                     <TextBlock Text="3." FontSize="50" FontWeight="SemiBold" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Margin="0, 0, 20, 0" />
                     <Border Grid.Column="1" CornerRadius="12" BorderThickness="1" BorderBrush="Aquamarine" Padding="15" Background="AliceBlue">
                         <StackPanel>
-                            <RadioButtons x:Name="question_3_radio_1" Header="Ερώτηση για την Αλεξανδρούπολη No 3..." MaxColumns="3" Visibility="Collapsed">
-                                <RadioButton x:Name="question_3_radio1_answer1" Content="Απάντηση 1" />
-                                <RadioButton x:Name="question_3_radio1_answer2" Content="Απάντηση 2" />
-                                <RadioButton x:Name="question_3_radio1_answer3" Content="Απάντηση 3" />
+                            <RadioButtons x:Name="question_3_radio_1" Header="Ποια από τις παρακάτω χρονικές αλληλουχίες γεγονότων είναι σωστή για το Καπνομάγαζο;" MaxColumns="3" Visibility="Collapsed">
+                                <RadioButton x:Name="question_3_radio1_answer1" Content="Πυρκαγιά – Καθολικό Σχολείο – Καπναποθήκη – Προσφυγική στέγαση" />
+                                <RadioButton x:Name="question_3_radio1_answer2" Content="Καθολικό Σχολείο – Καπναποθήκη – Πυρκαγιά – Προσφυγική στέγαση" />
+                                <RadioButton x:Name="question_3_radio1_answer3" Content="Καθολικό Σχολείο – Πυρκαγιά – Προσφυγική στέγαση – Καπναποθήκη" />
                             </RadioButtons>
-                            <RadioButtons x:Name="question_3_radio_2" Header="Ερώτηση για την Αλεξανδρούπολη No 3.2..." MaxColumns="3" Visibility="Collapsed">
-                                <RadioButton x:Name="question_3_radio2_answer1" Content="Απάντηση 1" />
-                                <RadioButton x:Name="question_3_radio2_answer2" Content="Απάντηση 2" />
-                                <RadioButton x:Name="question_3_radio2_answer3" Content="Απάντηση 3" />
+                            <RadioButtons x:Name="question_3_radio_2" Header="Ποια από τις παρακάτω πληροφορίες ΔΕΝ ισχύει για τον Σιδηροδρομικό Σταθμό της Αλεξανδρούπολης;" MaxColumns="3" Visibility="Collapsed">
+                                <RadioButton x:Name="question_3_radio2_answer1" Content="Είναι διώροφος με κεραμοσκεπή" />
+                                <RadioButton x:Name="question_3_radio2_answer2" Content="Εξυπηρετούσε τη διακίνηση επιβατών και εμπορευμάτων" />
+                                <RadioButton x:Name="question_3_radio2_answer3" Content="Χτίστηκε τον 21ο αιώνα" />
                             </RadioButtons>
-                            <RadioButtons x:Name="question_3_radio_3" Header="Ερώτηση για την Αλεξανδρούπολη No 3.3..." MaxColumns="3" Visibility="Collapsed">
-                                <RadioButton x:Name="question_3_radio3_answer1" Content="Απάντηση 1" />
-                                <RadioButton x:Name="question_3_radio3_answer2" Content="Απάντηση 2" />
-                                <RadioButton x:Name="question_3_radio3_answer3" Content="Απάντηση 3" />
+                            <RadioButtons x:Name="question_3_radio_3" Header="Πότε περίπου «γεννήθηκε» η πόλη της Αλεξανδρούπολης;" MaxColumns="3" Visibility="Collapsed">
+                                <RadioButton x:Name="question_3_radio3_answer1" Content="Στα μέσα του 20ού αιώνα" />
+                                <RadioButton x:Name="question_3_radio3_answer2" Content="Στα τέλη του 19ου αιώνα" />
+                                <RadioButton x:Name="question_3_radio3_answer3" Content="Στις αρχές του 18ου αιώνα" />
                             </RadioButtons>
                             <TextBlock x:Name="question_3_empty" Text="Θέση Ερώτησης 3" FontSize="20" FontWeight="SemiLight" Foreground="DimGray" HorizontalAlignment="Center" Visibility="Visible"/>
+                            <TextBlock x:Name="question_3_answered" Text="Απαντήθηκε" FontSize="20" FontWeight="SemiLight" Foreground="DimGray" HorizontalAlignment="Center" Visibility="Collapsed"/>
                         </StackPanel>
                     </Border>
                 </Grid>
@@ -125,7 +129,7 @@
                 <TextBlock Text="Επέλεξε απάντηση και πάτησε το κουμπί για να συνεχίσεις" HorizontalAlignment="Center"/>
             </StackPanel>
 
-            <Button Grid.Column="1" VerticalAlignment="Bottom" Content="Επόμενη" Style="{StaticResource AccentButtonStyle}" Width="170" Click="Next_step" />
+            <Button x:Name="NextButton" Grid.Column="1" VerticalAlignment="Bottom" Content="Επόμενη" Style="{StaticResource AccentButtonStyle}" Width="170" Click="Next_step" />
         </Grid>
 
     </Grid>

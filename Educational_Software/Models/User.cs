@@ -28,11 +28,16 @@ namespace Educational_Software.Models
             List<Answer> answers = DatabaseHandler.get_answers(id);
             return answers;
         }
-        public Answer answer(int section, int question, int time, float rating)
+        public Answer answer(int section, int question, int time, float rating, bool userAnswer)
         {
-            bool write_answer = DatabaseHandler.add_answer(id,section,question,time,rating);
+            bool write_answer = DatabaseHandler.add_answer(id,section,question,time,rating,userAnswer);
 
-            return new Answer(id, section, question, time, rating);
+            return new Answer(id, section, question, time, rating, userAnswer);
+        }
+
+        public void remove_answer(int section)
+        {
+            bool has_deleted = DatabaseHandler.remove_answer(id,section);
         }
 
     }

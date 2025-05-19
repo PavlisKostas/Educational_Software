@@ -23,9 +23,9 @@ namespace Educational_Software.Models
             if (DatabaseHandler.add_user(name, lastname, email, password))
             {
                 Debug.WriteLine("successful signup going to create user object");
-                user = new User(0, name, lastname, email, password);
+                List<User> users = DatabaseHandler.get_user(email, password);
                 Debug.WriteLine("successful user object creation return user object");
-                return user;
+                return users[0];
             }
             else
             {
