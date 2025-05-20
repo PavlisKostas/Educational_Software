@@ -22,6 +22,7 @@ namespace Educational_Software.Navigation_UI_Pages
     public sealed partial class Test_1 : Page
     {
         User user;
+        MainWindow mainWindow;
         bool isCompleted = false;
         bool difficult = true;
         List<bool> answer = new List<bool>();
@@ -36,11 +37,12 @@ namespace Educational_Software.Navigation_UI_Pages
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            if (e.Parameter != null)
+            if (e.Parameter is object[] parameters && parameters.Length == 2)
             {
-                user = e.Parameter as User;
+                user = parameters[0] as User;
+                mainWindow = parameters[1] as MainWindow;
             }
-            if(user.get_answers().Count(a => a.section == 1 && a.question == 4 && a.userAnswer) == 0)
+            if (user.get_answers().Count(a => a.section == 1 && a.question == 4 && a.userAnswer) == 0)
             {
                 float score = user.get_answers().Where(s => s.section == 1).Sum(a => a.rating);
 
@@ -63,8 +65,10 @@ namespace Educational_Software.Navigation_UI_Pages
             else
             {
                 test_1_questions.Visibility = Visibility.Collapsed;
+                test_1_completed.Visibility = Visibility.Visible;
                 completion_button.IsEnabled = false;
                 completion_button.Visibility = Visibility.Collapsed;
+                Bottom_Text.Visibility = Visibility.Collapsed;
                 info_message.Severity = InfoBarSeverity.Success;
                 info_message.Title = "Επιτυχία";
                 info_message.Message = "Έχετε περάσει τη δοκιμασία !";
@@ -102,13 +106,18 @@ namespace Educational_Software.Navigation_UI_Pages
                 info_message.Title = "Αναμονή ολοκλήρωσης";
                 info_message.Message = "Απάντησε τις ερωτήσεις του τεστ σωστά ώστε να μπορέσεις να συνεχίσεις σε επόμενες ενότητες";
                 question_1_1_radio.SelectedItem = null;
+                question_1_2_radio.SelectedItem = null;
                 NegativeAnswer_checkbox.IsChecked = false;
                 PositiveAnswer_checkbox.IsChecked = false;
                 question_3_1_combobox.SelectedItem = null;
+                question_3_2_combobox.SelectedItem = null;
                 question_1_1_radio.IsEnabled = true;
+                question_1_2_radio.IsEnabled = true;
                 NegativeAnswer_checkbox.IsEnabled = true;
                 PositiveAnswer_checkbox.IsEnabled = true;
                 question_3_1_combobox.IsEnabled = true;
+                question_3_2_combobox.IsEnabled = true;
+
 
                 isCompleted = false;
             }
@@ -176,7 +185,6 @@ namespace Educational_Software.Navigation_UI_Pages
                         scores.Add(0f);
                     }
 
-                    System.Diagnostics.Debug.WriteLine("H APANTHSH POU EPLEKSE EINAI " + question_3_2_combobox.SelectedIndex.ToString());
                     if (question_3_2_combobox.SelectedIndex == 2)
                     {
                         answer.Add(true);
@@ -200,23 +208,31 @@ namespace Educational_Software.Navigation_UI_Pages
                     info_message.Title = "Αποτυχία";
                     info_message.Message = "Προσπαθήστε ξανά.";
                     question_1_1_radio.IsEnabled = false;
+                    question_1_2_radio.IsEnabled = false;
                     NegativeAnswer_checkbox.IsEnabled = false;
                     PositiveAnswer_checkbox.IsEnabled = false;
                     question_3_1_combobox.IsEnabled = false;
-                    //user.answer(1, 4, time_period_seconds, scores.Sum(), false);
+                    question_3_2_combobox.IsEnabled = false;
+
+
+                    scores.Clear();
+                    answer.Clear();
 
                 }
                 else
                 {
-                    ((Button)sender).Content = "Τέλος";
+                    mainWindow.chapter_2_nav.Visibility = Visibility.Visible;
+                    ((Button)sender).IsEnabled = false;
+                    mainWindow.chapter_2_nav.Visibility = Visibility.Visible;
                     info_message.Severity = InfoBarSeverity.Success;
                     info_message.Title = "Επιτυχία";
                     info_message.Message = "Συγχαρητήρια! Περάσατε τη δοκιμασία !";
                     question_1_1_radio.IsEnabled = false;
+                    question_1_2_radio.IsEnabled = false;
                     NegativeAnswer_checkbox.IsEnabled = false;
                     PositiveAnswer_checkbox.IsEnabled = false;
                     question_3_1_combobox.IsEnabled = false;
-                    //user.remove_answer(10);
+                    question_3_2_combobox.IsEnabled = false;
                     user.answer(1, 4, time_period_seconds, scores.Sum(), true);
 
                 }

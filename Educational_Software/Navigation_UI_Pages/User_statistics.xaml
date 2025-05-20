@@ -105,7 +105,7 @@
                                 <TextBlock Text="📝" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35" Margin="-15, 0, 0, 0" />
                                 <TextBlock Text="Τεστ 3" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="19" FontWeight="SemiBold" />
                             </StackPanel>
-                            <ProgressBar x:Name="progressBarTest3" Width="160" Height="20" Value="3" Maximum="3" HorizontalAlignment="Center" ShowError="True" />
+                            <ProgressBar x:Name="progressBarTest3" Width="160" Height="20" Value="3" Maximum="3" HorizontalAlignment="Center" />
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                                 <TextBlock Text="Βαθμολογία " HorizontalAlignment="Center" FontSize="19" FontWeight="Bold"/>
                                 <TextBlock x:Name="score_test_3" Text="-" HorizontalAlignment="Center" FontSize="19" FontWeight="Bold" Margin="10, 0,0,0"/>
