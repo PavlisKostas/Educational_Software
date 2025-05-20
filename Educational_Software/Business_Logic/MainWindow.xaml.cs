@@ -66,26 +66,76 @@ namespace Educational_Software
 
         private void Log_in(object sender, RoutedEventArgs e)
         {
-           
-
-            Debug.WriteLine("going to sign in");
-
-            Debug.WriteLine(email_obj.Text);
 
             user = Models.Server.sign_in(username_sign_in.Text.ToString(), password_sign_in.Password.ToString());
 
             if (user != null)
             {
-                Debug.WriteLine("successful sign in");
+
+                if (user.get_answers().Count(a => a.section == 2 && a.question == 4 && a.userAnswer) > 0)
+                {
+                    if (user.get_answers().Count(a => a.section == 3 && (a.question == 31 || a.question == 32 || a.question == 33)) > 0)
+                    {
+                        chapter_1_nav.Visibility = Visibility.Visible;
+                        test_1_nav.Visibility = Visibility.Visible;
+                        chapter_2_nav.Visibility = Visibility.Visible;
+                        test_2_nav.Visibility = Visibility.Visible;
+                        chapter_3_nav.Visibility = Visibility.Visible;
+                        test_3_nav.Visibility = Visibility.Visible;
+                    }
+                    else
+                    {
+                        chapter_1_nav.Visibility = Visibility.Visible;
+                        test_1_nav.Visibility = Visibility.Visible;
+                        chapter_2_nav.Visibility = Visibility.Visible;
+                        test_2_nav.Visibility = Visibility.Visible;
+                        chapter_3_nav.Visibility = Visibility.Visible;
+                    }
+                }
+                else
+                {
+                    if (user.get_answers().Count(a => a.section == 1 && a.question == 4 && a.userAnswer) > 0)
+                    {
+                        if (user.get_answers().Count(a => a.section == 2 && (a.question == 31 || a.question == 32 || a.question == 33)) > 0)
+                        {
+                            chapter_1_nav.Visibility = Visibility.Visible;
+                            test_1_nav.Visibility = Visibility.Visible;
+                            chapter_2_nav.Visibility = Visibility.Visible;
+                            test_2_nav.Visibility = Visibility.Visible;
+                            
+                        }
+                        else
+                        {
+                            chapter_1_nav.Visibility = Visibility.Visible;
+                            test_1_nav.Visibility = Visibility.Visible;
+                            chapter_2_nav.Visibility = Visibility.Visible;
+                        }
+                    }
+                    else
+                    {
+
+                        if (user.get_answers().Count(a => a.section == 1 && (a.question == 31 || a.question == 32 || a.question == 33)) > 0)
+                        {
+                            chapter_1_nav.Visibility = Visibility.Visible;
+                            test_1_nav.Visibility = Visibility.Visible;
+                        }
+                        else
+                        {
+                            chapter_1_nav.Visibility = Visibility.Visible;
+                        }
+
+                    }
+                }
+
                 welcome_screen.Visibility = Visibility.Collapsed;
                 main_screen.Visibility = Visibility.Visible;
                 sign_out_button.Visibility = Visibility.Visible;
                 logged_in = true;
                 Main_TeachingTip.IsOpen = false;
+                SignUp_TeachingTip.IsOpen = false;
             }
             else
             {
-                Debug.WriteLine("unsuccessful sign in");
                 logged_in = false;
                 Main_TeachingTip.IsOpen = true;
             }
@@ -120,7 +170,14 @@ namespace Educational_Software
             logged_in = false;
 
             navigation_element.SelectedItem = navigation_element.MenuItems[0];
-            
+
+            chapter_1_nav.Visibility = Visibility.Collapsed;
+            chapter_2_nav.Visibility = Visibility.Collapsed;
+            chapter_3_nav.Visibility = Visibility.Collapsed;
+            test_1_nav.Visibility = Visibility.Collapsed;
+            test_2_nav.Visibility = Visibility.Collapsed;
+            test_3_nav.Visibility = Visibility.Collapsed;
+
         }
 
         private void Sign_up_semi(object sender, RoutedEventArgs e)
@@ -142,24 +199,52 @@ namespace Educational_Software
 
         private void Sign_up(object sender, RoutedEventArgs e)
         {
-            Debug.WriteLine("going to sign up");
 
             user = Models.Server.sign_up(name_obj.Text, surname_obj.Text, email_obj.Text, password_obj.Password);
 
-            Debug.WriteLine("successful signup going to sign in");
 
             Main_TeachingTip.IsOpen = false;
+            SignUp_TeachingTip.IsOpen = false;
 
-            //user.answer(1, 0, 0, 3, true);
-            if((bool)sign_up_radio_1_answer3.IsChecked && (bool)sign_up_radio_2_answer2.IsChecked && (bool)sign_up_radio_3_answer1.IsChecked)
+            if (user != null)
             {
-                user.answer(1, 10, 0, 3f, true);
-                user.answer(1, 21, 0, 3f, true);
-                user.answer(1, 31, 0, 3f, true);
-                Debug.WriteLine("sign up quiz completed");
-                System.Diagnostics.Debug.WriteLine("OI APANTHSEIS EINAI" + user.get_answers().Count.ToString());
-                Debug.WriteLine("o xrhsths einai" + user.name);
+                if ((bool)sign_up_radio_1_answer3.IsChecked && (bool)sign_up_radio_2_answer2.IsChecked && (bool)sign_up_radio_3_answer1.IsChecked)
+                {
+                    user.answer(1, 10, 0, 3f, true);
+                    user.answer(1, 21, 0, 3f, true);
+                    user.answer(1, 31, 0, 3f, true);
 
+                    chapter_1_nav.Visibility = Visibility.Visible;
+                    test_1_nav.Visibility = Visibility.Visible;
+
+                }
+                else
+                {
+                    chapter_1_nav.Visibility = Visibility.Visible;
+                }
+
+
+                welcome_screen.Visibility = Visibility.Collapsed;
+                main_screen.Visibility = Visibility.Visible;
+                sign_out_button.Visibility = Visibility.Visible;
+                logged_in = true;
+                Main_TeachingTip.IsOpen = false;
+                SignUp_TeachingTip.IsOpen = false;
+            }
+            else
+            {
+                email_obj.Text = "";
+                password_obj.Password = "";
+                name_obj.Text = "";
+                surname_obj.Text = "";
+                sign_up_2.Visibility = Visibility.Collapsed;
+                sign_up_1.Visibility = Visibility.Visible;
+                sign_up_radio_1.SelectedItem = null;
+                sign_up_radio_2.SelectedItem = null;
+                sign_up_radio_3.SelectedItem = null;
+                logged_in = false;
+                Main_TeachingTip.IsOpen = false;
+                SignUp_TeachingTip.IsOpen = true;
             }
         }
 
@@ -198,32 +283,8 @@ namespace Educational_Software
 
         private async Task SizeWindow()
         {
-            /*
-            var monitorInfo = default(DisplayMonitor);
-            var displayList = await DeviceInformation.FindAllAsync
-                              (DisplayMonitor.GetDeviceSelector());
 
-            if (!displayList.Any())
-                return;
-
-
-            if (displayList.Count > 1)
-            {
-
-                monitorInfo = await DisplayMonitor.FromInterfaceIdAsync(displayList[1].Id);
-                Debug.WriteLine("<<ALERT>> Monitor 1: " + monitorInfo.NativeResolutionInRawPixels.Width + "x" + monitorInfo.NativeResolutionInRawPixels.Height);
-            }
-            else
-            {
-
-                monitorInfo = await DisplayMonitor.FromInterfaceIdAsync(displayList[0].Id);
-                Debug.WriteLine("<<ALERT>> Monitor 0: " + monitorInfo.NativeResolutionInRawPixels.Width + "x" + monitorInfo.NativeResolutionInRawPixels.Height);
-            }
-            */
-
-
-
-            if (width == 0 || height == 0) //monitorInfo == null
+            if (width == 0 || height == 0)
             {
                 width = 450;
                 height = 400;
@@ -233,8 +294,6 @@ namespace Educational_Software
             }
             else
             {
-                //double dheight = monitorInfo.NativeResolutionInRawPixels.Height / 1.5;
-                //double dwidth = monitorInfo.NativeResolutionInRawPixels.Width / 1.4;
 
                 double dheight = height / 1.35;
                 double dwidth = width / 1.2;
@@ -376,28 +435,28 @@ namespace Educational_Software
                             contentFrame.Navigate(typeof(Edu_1), user);
                             break;
                         case "quiz_1":
-                            contentFrame.Navigate(typeof(Quiz_1), user);
+                            contentFrame.Navigate(typeof(Quiz_1), new object[]{ user, this });
                             break;
                         case "test_1":
-                            contentFrame.Navigate(typeof(Test_1), user);
+                            contentFrame.Navigate(typeof(Test_1), new object[] { user, this });
                             break;
                         case "edu_2":
                             contentFrame.Navigate(typeof(Edu_2), user);
                             break;
                         case "quiz_2":
-                            contentFrame.Navigate(typeof(Quiz_2), user);
+                            contentFrame.Navigate(typeof(Quiz_2), new object[] { user, this });
                             break;
                         case "test_2":
-                            contentFrame.Navigate(typeof(Test_2), user);
+                            contentFrame.Navigate(typeof(Test_2), new object[] { user, this });
                             break;
                         case "edu_3":
                             contentFrame.Navigate(typeof(Edu_3), user);
                             break;
                         case "quiz_3":
-                            contentFrame.Navigate(typeof(Quiz_3), user);
+                            contentFrame.Navigate(typeof(Quiz_3), new object[] { user, this });
                             break;
                         case "test_3":
-                            contentFrame.Navigate(typeof(Test_3), user);
+                            contentFrame.Navigate(typeof(Test_3), new object[] { user, this });
                             break;
                         case "user_statistics":
                             contentFrame.Navigate(typeof(User_statistics), user);

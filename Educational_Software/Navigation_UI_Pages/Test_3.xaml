@@ -31,109 +31,117 @@
         VerticalScrollMode="Enabled" VerticalScrollBarVisibility="Auto"
         Margin="40, 8, 40, 8" Visibility="Visible">
 
-            <StackPanel x:Name="test_1_questions" Spacing="50" Margin="0, 0, 17, 0">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
+            <StackPanel Margin="0, 0, 17, 0" >
+                <StackPanel x:Name="test_3_questions" Spacing="50" Visibility="Visible">
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
 
 
-                    <FontIcon Glyph="&#xEADF;" FontSize="60" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0, 0, 25 ,0" />
-                    <Border Grid.Column="1" CornerRadius="12" BorderThickness="1" BorderBrush="YellowGreen" Padding="15" Background="LightGoldenrodYellow" MinHeight="140">
+                        <FontIcon Glyph="&#xEADF;" FontSize="60" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0, 0, 25 ,0" />
+                        <Border Grid.Column="1" CornerRadius="12" BorderThickness="1" BorderBrush="YellowGreen" Padding="15" Background="LightGoldenrodYellow" MinHeight="140">
 
-                        <StackPanel Spacing="5" HorizontalAlignment="Center" VerticalAlignment="Center">
-                            <TextBlock Text="Ερώτηση Πολλαπλής Επιλογής" FontWeight="SemiBold" FontSize="16" Margin="0, 0, 0, 8" HorizontalAlignment="Center"/>
-                            <StackPanel x:Name="question_1_1" Visibility="Visible">
-                                <TextBlock Text="Πότε χτίστηκε το Καπνομάγαζο της Αλεξανδρούπολης;" HorizontalAlignment="Center"/>
-                                <RadioButtons x:Name="question_1_1_radio" MaxColumns="4" HorizontalAlignment="Center" >
-                                    <RadioButton x:Name="question_1_1_radio_answer1" Content="1992" />
-                                    <RadioButton x:Name="question_1_1_radio_answer2" Content="1822" />
-                                    <RadioButton x:Name="question_1_1_radio_answer3" Content="1906" />
-                                    <RadioButton x:Name="question_1_1_radio_answer4" Content="1880" />
-                                </RadioButtons>
+                            <StackPanel Spacing="5" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <TextBlock Text="Ερώτηση Πολλαπλής Επιλογής" FontWeight="SemiBold" FontSize="16" Margin="0, 0, 0, 8" HorizontalAlignment="Center"/>
+                                <StackPanel x:Name="question_1_1" Visibility="Visible">
+                                    <TextBlock Text="Πότε χτίστηκε το Καπνομάγαζο της Αλεξανδρούπολης;" HorizontalAlignment="Center"/>
+                                    <RadioButtons x:Name="question_1_1_radio" MaxColumns="4" HorizontalAlignment="Center" >
+                                        <RadioButton x:Name="question_1_1_radio_answer1" Content="1992" />
+                                        <RadioButton x:Name="question_1_1_radio_answer2" Content="1822" />
+                                        <RadioButton x:Name="question_1_1_radio_answer3" Content="1906" />
+                                        <RadioButton x:Name="question_1_1_radio_answer4" Content="1880" />
+                                    </RadioButtons>
+                                </StackPanel>
+                                <StackPanel x:Name="question_1_2" Visibility="Collapsed">
+                                    <TextBlock Text="Ποια ήταν η πρώτη χρήση του Καπνομάγαζου;" HorizontalAlignment="Center"/>
+                                    <RadioButtons x:Name="question_1_2_radio" MaxColumns="4" HorizontalAlignment="Center" >
+                                        <RadioButton x:Name="question_1_2_radio_answer1" Content="Καπνός" />
+                                        <RadioButton x:Name="question_1_2_radio_answer2" Content="Σχολείο" />
+                                        <RadioButton x:Name="question_1_2_radio_answer3" Content="Αποθήκη" />
+                                        <RadioButton x:Name="question_1_2_radio_answer4" Content="Βιβλιοθήκη" />
+                                    </RadioButtons>
+                                </StackPanel>
                             </StackPanel>
-                            <StackPanel x:Name="question_1_2" Visibility="Collapsed">
-                                <TextBlock Text="Ποια ήταν η πρώτη χρήση του Καπνομάγαζου;" HorizontalAlignment="Center"/>
-                                <RadioButtons x:Name="question_1_2_radio" MaxColumns="4" HorizontalAlignment="Center" >
-                                    <RadioButton x:Name="question_1_2_radio_answer1" Content="Καπνός" />
-                                    <RadioButton x:Name="question_1_2_radio_answer2" Content="Σχολείο" />
-                                    <RadioButton x:Name="question_1_2_radio_answer3" Content="Αποθήκη" />
-                                    <RadioButton x:Name="question_1_2_radio_answer4" Content="Βιβλιοθήκη" />
-                                </RadioButtons>
+
+                        </Border>
+                    </Grid>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+
+                        <FontIcon Glyph="&#xEADF;" FontSize="60" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0, 0, 25 ,0" />
+                        <Border Grid.Column="1" CornerRadius="12" BorderThickness="1" BorderBrush="YellowGreen" Padding="15" Background="LightGoldenrodYellow" MinHeight="140">
+
+                            <StackPanel Spacing="5" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <TextBlock Text="Ερώτηση Σωστού/Λάθους" FontWeight="SemiBold" FontSize="16" Margin="0, 0, 0, 8" HorizontalAlignment="Center"/>
+                                <StackPanel HorizontalAlignment="Center">
+                                    <TextBlock x:Name="question_2_1_text"  Text="Στο Δέλτα δεν συναντώνται είδη ψαριών που ζουν σε αλμυρό νερό." HorizontalAlignment="Center" Visibility="Visible"/>
+                                    <TextBlock x:Name="question_2_2_text"  Text="Στο Δέλτα Έβρου έχουν καταγραφεί πάνω από 300 είδη φυτών." HorizontalAlignment="Center" Visibility="Collapsed"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <CheckBox x:Name="PositiveAnswer_checkbox" Content="Ναι" Checked="PositiveAnswer_checkbox_checked" Width="Auto" />
+                                    <CheckBox x:Name="NegativeAnswer_checkbox" Content="Όχι" Checked="NegativeAnswer_checkbox_checked" />
+                                </StackPanel>
                             </StackPanel>
-                        </StackPanel>
 
-                    </Border>
-                </Grid>
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-
-
-                    <FontIcon Glyph="&#xEADF;" FontSize="60" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0, 0, 25 ,0" />
-                    <Border Grid.Column="1" CornerRadius="12" BorderThickness="1" BorderBrush="YellowGreen" Padding="15" Background="LightGoldenrodYellow" MinHeight="140">
-
-                        <StackPanel Spacing="5" HorizontalAlignment="Center" VerticalAlignment="Center">
-                            <TextBlock Text="Ερώτηση Σωστού/Λάθους" FontWeight="SemiBold" FontSize="16" Margin="0, 0, 0, 8" HorizontalAlignment="Center"/>
-                            <StackPanel>
-                                <TextBlock x:Name="question_2_1_text"  Text="Στο Δέλτα δεν συναντώνται είδη ψαριών που ζουν σε αλμυρό νερό." HorizontalAlignment="Center" Visibility="Visible"/>
-                                <TextBlock x:Name="question_2_2_text"  Text="Στο Δέλτα Έβρου έχουν καταγραφεί πάνω από 300 είδη φυτών." HorizontalAlignment="Center" Visibility="Collapsed"/>
-                            </StackPanel>
-                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                                <CheckBox x:Name="PositiveAnswer_checkbox" Content="Ναι" Checked="PositiveAnswer_checkbox_checked" Width="Auto" />
-                                <CheckBox x:Name="NegativeAnswer_checkbox" Content="Όχι" Checked="NegativeAnswer_checkbox_checked" />
-                            </StackPanel>
-                        </StackPanel>
-
-                    </Border>
-                </Grid>
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
+                        </Border>
+                    </Grid>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
 
 
-                    <FontIcon Glyph="&#xEADF;" FontSize="60" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0, 0, 25 ,0" />
-                    <Border Grid.Column="1" CornerRadius="12" BorderThickness="1" BorderBrush="YellowGreen" Padding="15" Background="LightGoldenrodYellow" MinHeight="140">
+                        <FontIcon Glyph="&#xEADF;" FontSize="60" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0, 0, 25 ,0" />
+                        <Border Grid.Column="1" CornerRadius="12" BorderThickness="1" BorderBrush="YellowGreen" Padding="15" Background="LightGoldenrodYellow" MinHeight="140">
 
-                        <StackPanel Spacing="0" HorizontalAlignment="Center" VerticalAlignment="Center">
-                            <TextBlock Text="Ερώτηση Συμπλήρωσης Κενού" FontWeight="SemiBold" FontSize="16" Margin="0, 0, 0, 8" HorizontalAlignment="Center"/>
+                            <StackPanel Spacing="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <TextBlock Text="Ερώτηση Συμπλήρωσης Κενού" FontWeight="SemiBold" FontSize="16" Margin="0, 0, 0, 8" HorizontalAlignment="Center"/>
 
-                            <ScrollViewer ZoomMode="Disabled"
+                                <ScrollViewer ZoomMode="Disabled"
                             IsTabStop="True" IsVerticalScrollChainingEnabled="True"  
                             HorizontalAlignment="Center" VerticalAlignment="Center"  
                             HorizontalScrollMode="Enabled" HorizontalScrollBarVisibility="Auto"  
                             VerticalScrollMode="Disabled" VerticalScrollBarVisibility="Disabled" >
-                                <StackPanel>
-                                    <StackPanel x:Name="question_3_1" Orientation="Horizontal" HorizontalAlignment="Center" Spacing="7" VerticalAlignment="Center" Margin="0 , 7, 0, 17" Visibility="Visible">
-                                        <TextBlock x:Name="question_3_1_text" Text="«Ο φάρος της πόλης κατασκευάστηκε το έτος" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
-                                        <ComboBox x:Name="question_3_1_combobox" PlaceholderText="Επιλογή" Width="130" HorizontalAlignment="Center" VerticalAlignment="Bottom">
-                                            <x:String>1880</x:String>
-                                            <x:String>1900</x:String>
-                                            <x:String>1850</x:String>
-                                        </ComboBox>
-                                        <TextBlock Text=".»" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" />
+                                    <StackPanel>
+                                        <StackPanel x:Name="question_3_1" Orientation="Horizontal" HorizontalAlignment="Center" Spacing="7" VerticalAlignment="Center" Margin="0 , 7, 0, 17" Visibility="Visible">
+                                            <TextBlock x:Name="question_3_1_text" Text="«Ο φάρος της πόλης κατασκευάστηκε το έτος" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
+                                            <ComboBox x:Name="question_3_1_combobox" PlaceholderText="Επιλογή" Width="130" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+                                                <x:String>1880</x:String>
+                                                <x:String>1900</x:String>
+                                                <x:String>1850</x:String>
+                                            </ComboBox>
+                                            <TextBlock Text=".»" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" />
+                                        </StackPanel>
+                                        <StackPanel x:Name="question_3_2" Orientation="Horizontal" HorizontalAlignment="Center" Spacing="7" VerticalAlignment="Center" Margin="0 , 7, 0, 17" Visibility="Collapsed">
+                                            <TextBlock x:Name="question_3_2_text" Text="«Η φωτεινή του δέσμη φτάνει μέχρι" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
+                                            <ComboBox x:Name="question_3_2_combobox" PlaceholderText="Επιλογή" Width="130" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+                                                <x:String>24</x:String>
+                                                <x:String>18</x:String>
+                                                <x:String>33</x:String>
+                                            </ComboBox>
+                                            <TextBlock Text="ναυτικά μίλια.»" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" />
+                                        </StackPanel>
                                     </StackPanel>
-                                    <StackPanel x:Name="question_3_2" Orientation="Horizontal" HorizontalAlignment="Center" Spacing="7" VerticalAlignment="Center" Margin="0 , 7, 0, 17" Visibility="Collapsed">
-                                        <TextBlock x:Name="question_3_2_text" Text="«Η φωτεινή του δέσμη φτάνει μέχρι" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
-                                        <ComboBox x:Name="question_3_2_combobox" PlaceholderText="Επιλογή" Width="130" HorizontalAlignment="Center" VerticalAlignment="Bottom">
-                                            <x:String>24</x:String>
-                                            <x:String>18</x:String>
-                                            <x:String>33</x:String>
-                                        </ComboBox>
-                                        <TextBlock Text="ναυτικά μίλια.»" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" />
-                                    </StackPanel>
-                                </StackPanel>
-                            </ScrollViewer>
+                                </ScrollViewer>
 
-                        </StackPanel>
+                            </StackPanel>
 
-                    </Border>
-                </Grid>
+                        </Border>
+                    </Grid>
+                </StackPanel>
+
+                <StackPanel x:Name="test_3_completed" Visibility="Collapsed" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical" Spacing="15">
+                    <FontIcon Glyph="&#xE930;" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="100"/>
+                    <TextBlock Text="Ολοκληρώθηκε Επιτυχώς" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" FontWeight="SemiBold"/>
+                </StackPanel>
             </StackPanel>
 
 
@@ -155,7 +163,7 @@
             </Grid.ColumnDefinitions>
 
 
-            <TextBlock Text="Πάτησε το κουμπί ώστε να ελεγχθεί η ορθότητα των απαντήσεων" FontWeight="SemiBold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBlock x:Name="Bottom_Text" Text="Πάτησε το κουμπί ώστε να ελεγχθεί η ορθότητα των απαντήσεων" FontWeight="SemiBold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
             <Button x:Name="completion_button" Grid.Column="1" VerticalAlignment="Bottom" Content="Ολοκλήρωση" Style="{StaticResource AccentButtonStyle}" Width="180"  Click="Complete_button_Click"/>
         </Grid>

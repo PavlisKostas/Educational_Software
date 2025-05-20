@@ -27,11 +27,11 @@
 
 
         <ScrollViewer Grid.Row="1" ZoomMode="Disabled"
-    IsTabStop="True" IsVerticalScrollChainingEnabled="True"  
-    HorizontalAlignment="Stretch" VerticalAlignment="Center"  
-    HorizontalScrollMode="Disabled" HorizontalScrollBarVisibility="Disabled"  
-    VerticalScrollMode="Enabled" VerticalScrollBarVisibility="Auto"
-    Margin="40, 8, 40, 8">
+        IsTabStop="True" IsVerticalScrollChainingEnabled="True"  
+        HorizontalAlignment="Stretch" VerticalAlignment="Center"  
+        HorizontalScrollMode="Disabled" HorizontalScrollBarVisibility="Disabled"  
+        VerticalScrollMode="Enabled" VerticalScrollBarVisibility="Auto"
+        Margin="40, 8, 40, 8">
 
             <StackPanel Spacing="50">
                 <Grid>
@@ -120,7 +120,7 @@
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
 
-            <StackPanel>
+            <StackPanel x:Name="Bottom_Text">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <TextBlock Text="Ερώτηση:" FontSize="20" FontWeight="SemiBold"/>
                     <TextBlock x:Name="question_number" Text="1" FontSize="20" FontWeight="SemiBold" Margin="10, 0, 0, 0" />

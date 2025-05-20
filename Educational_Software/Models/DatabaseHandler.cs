@@ -16,9 +16,8 @@ namespace Educational_Software.Models
         private static string connectionString = " Data Source = eduSoftwareDatabase.db ";
         public static void CreateTables()
         {
-            System.Diagnostics.Debug.WriteLine("im hereeeeeeee");
             string createTableQuery0 = "CREATE TABLE IF NOT EXISTS " +
-                        "User ( id INTEGER PRIMARY KEY, name TEXT, lastname TEXT, email TEXT, password TEXT )";
+                        "User ( id INTEGER PRIMARY KEY, name TEXT, lastname TEXT, email TEXT UNIQUE, password TEXT )";
             string createTableQuery1 = "CREATE TABLE IF NOT EXISTS " +
                         "Answer ( studentId INTEGER, section INTEGER, question INTEGER, time INTEGER, rating REAL, userAnswer BOOLEAN)";
             execute_query(connectionString, createTableQuery0);
@@ -34,7 +33,6 @@ namespace Educational_Software.Models
         public static bool add_answer(int studentId, int section, int question, int time, double rating, bool userAnswer)
         {
             string insertQuery = $"INSERT INTO Answer (studentId, section, question, time, rating, userAnswer) VALUES ({studentId}, {section}, {question}, {time}, @rating, {userAnswer})";
-            //return execute_query(connectionString, insertQuery);
 
             try
             {

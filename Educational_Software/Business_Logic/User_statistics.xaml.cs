@@ -64,9 +64,24 @@ namespace Educational_Software.Navigation_UI_Pages
             {
                 System.Diagnostics.Debug.WriteLine("Oi swstes apanthseis einai" + user.get_answers().FirstOrDefault(a => a.section == 1 && a.question == 4).rating);
                 TimeSpan test_1_time = TimeSpan.FromSeconds(test_1.time);
+                if(test_1_time.Minutes < 10)
+                {
+                    test_1_minutes.Text = "0" + test_1_time.Minutes.ToString();
+                }
+                else
+                {
+                    test_1_minutes.Text = test_1_time.Minutes.ToString();
+                }
+
+                if (test_1_time.Seconds < 10)
+                {
+                    test_1_seconds.Text = "0" + test_1_time.Seconds.ToString();
+                }
+                else
+                {
+                    test_1_seconds.Text = test_1_time.Seconds.ToString();
+                }
                 score_test_1.Text = test_1.rating.ToString();
-                test_1_minutes.Text = test_1_time.Minutes.ToString();
-                test_1_seconds.Text = test_1_time.Seconds.ToString();
                 progressBarTest1.Value = test_1.rating;
             }
             else
@@ -82,9 +97,25 @@ namespace Educational_Software.Navigation_UI_Pages
                 System.Diagnostics.Debug.WriteLine("OI APANTHSEIS EINAI2" + user.get_answers().FirstOrDefault(a => a.section == 2 && a.question == 4).rating);
 
                 TimeSpan test_2_time = TimeSpan.FromSeconds(test_2.time);
+                
+
+                if(test_2_time.Minutes < 10)
+                {
+                    test_2_minutes.Text = "0" + test_2_time.Minutes.ToString();
+                }
+                else
+                {
+                    test_2_minutes.Text = test_2_time.Minutes.ToString();
+                }
+                if (test_2_time.Seconds < 10)
+                {
+                    test_2_seconds.Text = "0" + test_2_time.Seconds.ToString();
+                }
+                else
+                {
+                    test_2_seconds.Text = test_2_time.Seconds.ToString();
+                }
                 score_test_2.Text = test_2.rating.ToString();
-                test_2_minutes.Text = test_2_time.Minutes.ToString();
-                test_2_seconds.Text = test_2_time.Seconds.ToString();
                 progressBarTest2.Value = test_2.rating;
             }
             else
@@ -100,9 +131,26 @@ namespace Educational_Software.Navigation_UI_Pages
                 System.Diagnostics.Debug.WriteLine("OI APANTHSEIS EINAI2" + user.get_answers().FirstOrDefault(a => a.section == 2 && a.question == 4).rating);
                 System.Diagnostics.Debug.WriteLine("OI APANTHSEIS EINAI3" + user.get_answers().FirstOrDefault(a => a.section == 3 && a.question == 4).rating);
                 TimeSpan test_3_time = TimeSpan.FromSeconds(test_3.time);
+
+                if (test_3_time.Minutes < 10)
+                {
+                    test_3_minutes.Text = "0" + test_3_time.Minutes.ToString();
+                }
+                else
+                {
+                    test_3_minutes.Text = test_3_time.Minutes.ToString();
+                }
+
+                if (test_3_time.Seconds < 10)
+                {
+                    test_3_seconds.Text = "0" + test_3_time.Seconds.ToString();
+                }
+                else
+                {
+                    test_3_seconds.Text = test_3_time.Seconds.ToString();
+                }
+
                 score_test_3.Text = test_3.rating.ToString();
-                test_3_minutes.Text = test_3_time.Minutes.ToString();
-                test_3_seconds.Text = test_3_time.Seconds.ToString();
                 progressBarTest3.Value = test_3.rating;
             }
             else
