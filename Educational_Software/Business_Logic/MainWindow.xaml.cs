@@ -178,6 +178,8 @@ namespace Educational_Software
             test_2_nav.Visibility = Visibility.Collapsed;
             test_3_nav.Visibility = Visibility.Collapsed;
 
+            Models.Server.sign_out();
+
         }
 
         private void Sign_up_semi(object sender, RoutedEventArgs e)

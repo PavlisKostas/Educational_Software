@@ -151,20 +151,22 @@
                 </StackPanel>
 
                 <Expander
-             Margin="50, 0, 50, 0"
-             IsExpanded="False"
-             ExpandDirection="Down"
-             HorizontalAlignment="Stretch"
-             Header="Τι στεγάζει σήμερα η Ζαρίφειος Παιδαγωγική Ακαδημία"
-             Content="Το 1ο Πειραματικό Δημοτικό Σχολείο Αλεξανδρούπολης"/>
+                 Margin="50, 0, 50, 0"
+                 IsExpanded="False"
+                 ExpandDirection="Down"
+                 HorizontalAlignment="Stretch"
+                 Header="Τι στεγάζει σήμερα η Ζαρίφειος Παιδαγωγική Ακαδημία">
+                    <TextBlock TextWrapping="WrapWholeWords" HorizontalAlignment="Center" TextAlignment="Center" Text="Το 1ο Πειραματικό Δημοτικό Σχολείο Αλεξανδρούπολης"/>
+                </Expander>
 
                 <Expander
-             Margin="50, 0, 50, 0"
-             IsExpanded="False"
-             ExpandDirection="Down"
-             HorizontalAlignment="Stretch"
-             Header="Η σημερινή χρήση του Καπνομάγαζου"
-             Content="Σήμερα λειτουργεί εκεί η Δημοτική Βιβλιοθήκη της Αλεξανδρούπολης"/>
+                 Margin="50, 0, 50, 40"
+                 IsExpanded="False"
+                 ExpandDirection="Down"
+                 HorizontalAlignment="Stretch"
+                 Header="Η σημερινή χρήση του Καπνομάγαζου">
+                    <TextBlock TextWrapping="WrapWholeWords" HorizontalAlignment="Center" TextAlignment="Center" Text="Σήμερα λειτουργεί εκεί η Δημοτική Βιβλιοθήκη της Αλεξανδρούπολης"/>
+                </Expander>
 
             </StackPanel>
         </ScrollViewer>

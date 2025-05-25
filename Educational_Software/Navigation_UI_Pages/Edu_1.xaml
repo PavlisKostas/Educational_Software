@@ -65,32 +65,37 @@
                  IsExpanded="False"
                  ExpandDirection="Down"
                  HorizontalAlignment="Stretch"
-                 Header="Οι Γεωγραφικές Συντεταγμένες του"
-                 Content="40°50′37″N 25°52′30″E"/>
+                 Header="Οι Γεωγραφικές Συντεταγμένες του">
+                    <TextBlock TextWrapping="WrapWholeWords" HorizontalAlignment="Center" TextAlignment="Center" Text="40°50′37″N 25°52′30″E"/>
+                </Expander>
 
                 <Expander
                  Margin="50, 0, 50, 0"
                  IsExpanded="False"
                  ExpandDirection="Down"
                  HorizontalAlignment="Stretch"
-                 Header="Το Ύψος και η Ορατότητα του φωτός από μακριά"
-                 Content="Το ύψος του φάρου είναι 18 μέτρα και το φως του είναι ορατό από 24 ναυτικά μίλια μακριά (44χλμ. περίπου)"/>
+                 Header="Το Ύψος και η Ορατότητα του φωτός από μακριά">
+                    <TextBlock TextWrapping="WrapWholeWords" HorizontalAlignment="Center" TextAlignment="Center" Text="Το ύψος του φάρου είναι 18 μέτρα και το φως του είναι ορατό από 24 ναυτικά μίλια μακριά (44χλμ. περίπου)"/>
+                </Expander>
 
                 <Expander
                  Margin="50, 0, 50, 0"
                  IsExpanded="False"
                  ExpandDirection="Down"
                  HorizontalAlignment="Stretch"
-                 Header="Ο Ρυθμός Αναλαμπών"
-                 Content="Ο φάρος σημειώνει τρεις λευκές αναλαμπές κάθε 15 δευτερόλεπτα (0,38 + 2,12 + 0,38 + 2,12 +0,38 + 9,62 =15δ)"/>
+                 Header="Ο Ρυθμός Αναλαμπών">
+                    <TextBlock TextWrapping="WrapWholeWords" HorizontalAlignment="Center" TextAlignment="Center" Text="Ο φάρος σημειώνει τρεις λευκές αναλαμπές κάθε 15 δευτερόλεπτα (0,38 + 2,12 + 0,38 + 2,12 +0,38 + 9,62 =15δ)"/>
+                </Expander>
 
                 <Expander
                  Margin="50, 0, 50, 40"
                  IsExpanded="False"
                  ExpandDirection="Down"
                  HorizontalAlignment="Stretch"
-                 Header="Ο Τρόπος Λειτουργίας"
-                 Content="Αρχικά με ασετιλίνη, αργότερα με πετρέλαιο και από το 1974 με ηλεκτρικό ρεύμα."/>
+                 Header="Ο Τρόπος Λειτουργίας">
+                    <TextBlock TextWrapping="WrapWholeWords" HorizontalAlignment="Center" TextAlignment="Center" Text="Αρχικά με ασετιλίνη, αργότερα με πετρέλαιο και από το 1974 με ηλεκτρικό ρεύμα"/>
+                </Expander>
+                
             </StackPanel>
         </ScrollViewer>
 
