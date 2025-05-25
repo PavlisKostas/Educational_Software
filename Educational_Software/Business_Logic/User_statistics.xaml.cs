@@ -36,17 +36,16 @@ namespace Educational_Software.Navigation_UI_Pages
             user_full_name.Text = user.name + " " + user.lastname;
 
             var test_1 = user.get_answers().FirstOrDefault(a => a.section == 1 && a.question == 4);
-            //System.Diagnostics.Debug.WriteLine("OI APANTHSEIS EINAI" + user.get_answers().Where(a => a.question == 10).Count());
             var test_2 = user.get_answers().FirstOrDefault(a => a.section == 2 && a.question == 4);
             var test_3 = user.get_answers().FirstOrDefault(a => a.section == 3 && a.question == 4);
 
-            if (user.get_answers().Count(a => a.section == 3) > 0)
+            if (user.get_answers().Count(a => a.section == 2 && a.question == 4) > 0)
             {
                 currentUnitValue = 3;
             }
             else
             {
-                if (user.get_answers().Count(a => a.section == 2) > 0)
+                if (user.get_answers().Count(a => a.section == 1 && a.question == 4) > 0)
                 {
                     currentUnitValue = 2;
                 }
@@ -62,7 +61,6 @@ namespace Educational_Software.Navigation_UI_Pages
 
             if (test_1 != null)
             {
-                System.Diagnostics.Debug.WriteLine("Oi swstes apanthseis einai" + user.get_answers().FirstOrDefault(a => a.section == 1 && a.question == 4).rating);
                 TimeSpan test_1_time = TimeSpan.FromSeconds(test_1.time);
                 if(test_1_time.Minutes < 10)
                 {
@@ -94,7 +92,6 @@ namespace Educational_Software.Navigation_UI_Pages
 
             if (test_2 != null)
             {
-                System.Diagnostics.Debug.WriteLine("OI APANTHSEIS EINAI2" + user.get_answers().FirstOrDefault(a => a.section == 2 && a.question == 4).rating);
 
                 TimeSpan test_2_time = TimeSpan.FromSeconds(test_2.time);
                 
@@ -128,8 +125,6 @@ namespace Educational_Software.Navigation_UI_Pages
 
             if (test_3 != null)
             {
-                System.Diagnostics.Debug.WriteLine("OI APANTHSEIS EINAI2" + user.get_answers().FirstOrDefault(a => a.section == 2 && a.question == 4).rating);
-                System.Diagnostics.Debug.WriteLine("OI APANTHSEIS EINAI3" + user.get_answers().FirstOrDefault(a => a.section == 3 && a.question == 4).rating);
                 TimeSpan test_3_time = TimeSpan.FromSeconds(test_3.time);
 
                 if (test_3_time.Minutes < 10)

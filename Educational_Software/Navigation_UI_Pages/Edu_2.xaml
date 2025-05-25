@@ -72,30 +72,31 @@
                 </StackPanel>
 
                 <Expander
-             Margin="50, 0, 50, 0"
-             IsExpanded="False"
-             ExpandDirection="Down"
-             HorizontalAlignment="Stretch"
-             Header="Οι Γεωγραφικές Συντεταγμένες του"
-             Content="40°47′0″N 26°2′0″E"/>
+                 Margin="50, 0, 50, 0"
+                 IsExpanded="False"
+                 ExpandDirection="Down"
+                 HorizontalAlignment="Stretch"
+                 Header="Οι Γεωγραφικές Συντεταγμένες του">
+                    <TextBlock TextWrapping="WrapWholeWords" HorizontalAlignment="Center" TextAlignment="Center" Text="40°47′0″N 26°2′0″E"/>
+                </Expander>
 
                 <Expander
-             Margin="50, 0, 50, 0"
-             IsExpanded="False"
-             ExpandDirection="Down"
-             HorizontalAlignment="Stretch"
-             Header="Η Συνολική του Έκταση">
+                 Margin="50, 0, 50, 0"
+                 IsExpanded="False"
+                 ExpandDirection="Down"
+                 HorizontalAlignment="Stretch"
+                 Header="Η Συνολική του Έκταση">
                     <TextBlock TextWrapping="WrapWholeWords" HorizontalAlignment="Center" TextAlignment="Center" Text="Έχει έκταση 200.000 στρέμματα εκ των οποίων τα 95.000 είναι ενταγμένα στον κατάλογο των προστατευόμενων περιοχών της Διεθνούς Σύμβασης Ραμσάρ (1971) λόγω των σημαντικών ειδών που φιλοξενεί"/>
                 </Expander>
 
                 <Expander
-             Margin="50, 0, 50, 0"
-             IsExpanded="False"
-             ExpandDirection="Down"
-             HorizontalAlignment="Stretch"
-             Header="Η Χλωρίδα και η Πανίδα του Δέλτα"
-             Content="Έχουν παρατηρηθεί πάνω από 300 είδη φυτών καθώς επίσης δεκάδες είδη θηλαστικών, αμφίβιων και ερπετών"/>
-
+                 Margin="50, 0, 50, 40"
+                 IsExpanded="False"
+                 ExpandDirection="Down"
+                 HorizontalAlignment="Stretch"
+                 Header="Η Χλωρίδα και η Πανίδα του Δέλτα">
+                    <TextBlock TextWrapping="WrapWholeWords" HorizontalAlignment="Center" TextAlignment="Center" Text="Έχουν παρατηρηθεί πάνω από 300 είδη φυτών καθώς επίσης δεκάδες είδη θηλαστικών, αμφίβιων και ερπετών"/>
+                </Expander>
 
             </StackPanel>
         </ScrollViewer>

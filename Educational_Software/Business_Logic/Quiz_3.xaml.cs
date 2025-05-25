@@ -61,7 +61,7 @@ namespace Educational_Software.Navigation_UI_Pages
                         question_2_radio_1.IsEnabled = true;
                         question_list.Add(true);
                     }
-                    else if (user.get_answers().Count(a => a.section == 1 && a.question == 10 && a.rating == 0.5f) > 0)
+                    else if (user.get_answers().Count(a => a.section == 3 && a.question == 10 && a.rating == 0.5f) > 0)
                     {
                         question_2_radio_2.Visibility = Visibility.Visible;
                         question_2_radio_2.IsEnabled = true;
