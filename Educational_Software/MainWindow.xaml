@@ -278,6 +278,18 @@
                    Grid.Row="1"
                    IsEnabled="True"
                    />
+
+            <TeachingTip x:Name="SignUpUserError_TeachingTip"
+                   Title="Αδυναμία συνέχειας εγγραφής"
+                   Subtitle="Ένα ή περισσότερα πεδία δεν είναι συμπληρωμένα. Προσπάθησε ξανά !"
+                   HorizontalContentAlignment="Center"
+                   PreferredPlacement="Auto"
+                   PlacementMargin="20"
+                   IsLightDismissEnabled="True"
+                   CloseButtonContent="ΟΚ"
+                   Grid.Row="1"
+                   IsEnabled="True"
+                   />
         </Grid>
 
         <!-- End of Main App Content-->

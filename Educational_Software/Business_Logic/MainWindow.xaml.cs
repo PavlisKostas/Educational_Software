@@ -133,6 +133,7 @@ namespace Educational_Software
                 logged_in = true;
                 Main_TeachingTip.IsOpen = false;
                 SignUp_TeachingTip.IsOpen = false;
+                SignUpUserError_TeachingTip.IsOpen = false;
             }
             else
             {
@@ -184,6 +185,12 @@ namespace Educational_Software
 
         private void Sign_up_semi(object sender, RoutedEventArgs e)
         {
+            if(email_obj.Text == "" || name_obj.Text == "" || surname_obj.Text == "" || password_obj.Password == "")
+            {
+                SignUpUserError_TeachingTip.IsOpen = true;
+                return;
+            }
+
             sign_up_1.Visibility = Visibility.Collapsed;
             sign_up_2.Visibility = Visibility.Visible;
 
@@ -207,6 +214,7 @@ namespace Educational_Software
 
             Main_TeachingTip.IsOpen = false;
             SignUp_TeachingTip.IsOpen = false;
+            SignUpUserError_TeachingTip.IsOpen = false;
 
             if (user != null)
             {
@@ -232,6 +240,7 @@ namespace Educational_Software
                 logged_in = true;
                 Main_TeachingTip.IsOpen = false;
                 SignUp_TeachingTip.IsOpen = false;
+                SignUpUserError_TeachingTip.IsOpen = false;
             }
             else
             {
@@ -246,6 +255,7 @@ namespace Educational_Software
                 sign_up_radio_3.SelectedItem = null;
                 logged_in = false;
                 Main_TeachingTip.IsOpen = false;
+                SignUpUserError_TeachingTip.IsOpen = false;
                 SignUp_TeachingTip.IsOpen = true;
             }
         }
