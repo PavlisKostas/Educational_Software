@@ -55,6 +55,7 @@ namespace Educational_Software.Navigation_UI_Pages
                 if (user.get_answers().Count(a => a.section == 2 && (a.question == 21 || a.question == 22)) == 0)
                 {
                     question_2_empty.Visibility = Visibility.Collapsed;
+                    question_number.Text = "2";
                     if (user.get_answers().Count(a => a.section == 2 && a.question == 10 && a.rating == 1f) > 0)
                     {
                         question_2_radio_1.Visibility = Visibility.Visible;
@@ -81,7 +82,9 @@ namespace Educational_Software.Navigation_UI_Pages
                     question_2_answered.Visibility = Visibility.Visible;
                     NextButton.Content = "Ολοκλήρωση";
                     current_question_number = 3;
-                    var answer_question = user.get_answers().FirstOrDefault(a => a.question == 21 || a.question == 22);
+                    question_number.Text = "3";
+
+                    var answer_question = user.get_answers().FirstOrDefault(a => a.section == 2 && (a.question == 21 || a.question == 22));
 
                     question_3_empty.Visibility = Visibility.Collapsed;
                     if (answer_question.question == 21 && answer_question.rating == 1f)
@@ -97,7 +100,7 @@ namespace Educational_Software.Navigation_UI_Pages
                         question_3_radio_2.IsEnabled = true;
                         question_list.Add(true);
                         question_list.Add(true);
-                        time_delay = 2;
+                        time_delay = 1;
                     }
                     else if (answer_question.question == 21 && answer_question.rating == 0f)
                     {
@@ -110,10 +113,14 @@ namespace Educational_Software.Navigation_UI_Pages
                     {
                         question_3_radio_2.Visibility = Visibility.Visible;
                         question_3_radio_2.IsEnabled = true;
-                        var answer_question1 = user.get_answers().FirstOrDefault(a => a.question == 10);
+                        var answer_question1 = user.get_answers().FirstOrDefault(a => a.section == 2 && a.question == 10);
                         if (answer_question1.rating > 0f)
                         {
                             question_list.Add(true);
+                            if (answer_question1.rating == 0.5f)
+                            {
+                                time_delay = 1;
+                            }
                         }
                         else
                         {
@@ -125,26 +132,35 @@ namespace Educational_Software.Navigation_UI_Pages
                     {
                         question_3_radio_3.Visibility = Visibility.Visible;
                         question_3_radio_3.IsEnabled = true;
-                        var answer_question1 = user.get_answers().FirstOrDefault(a => a.question == 10);
+                        var answer_question1 = user.get_answers().FirstOrDefault(a => a.section == 2 && a.question == 10);
                         if (answer_question1.rating > 0f)
                         {
                             question_list.Add(true);
+                            if (answer_question1.rating == 0.5f)
+                            {
+                                time_delay = 2;
+                            }
                         }
                         else
                         {
                             question_list.Add(false);
+                            time_delay = 1;
                         }
                         question_list.Add(true);
-                        time_delay = 2;
+                        
                     }
                     else
                     {
                         question_3_radio_3.Visibility = Visibility.Visible;
                         question_3_radio_3.IsEnabled = true;
-                        var answer_question1 = user.get_answers().FirstOrDefault(a => a.question == 10);
+                        var answer_question1 = user.get_answers().FirstOrDefault(a => a.section == 2 && a.question == 10);
                         if (answer_question1.rating > 0f)
                         {
                             question_list.Add(true);
+                            if (answer_question1.rating == 0.5f)
+                            {
+                                time_delay = 1;
+                            }
                         }
                         else
                         {
@@ -349,6 +365,15 @@ namespace Educational_Software.Navigation_UI_Pages
                     user.remove_answer(2);
                 }
                 else if (question_list.Count(f => f == false) < question_list.Count(t => t == true) && time_delay >= 2)
+                {
+                    ((Button)sender).Content = "Επανάληψη";
+                    info_message.Severity = InfoBarSeverity.Error;
+                    info_message.Title = "Αποτυχία";
+                    info_message.Message = "Ίσως δυσκολευτήκατε πολύ στις απαντήσεις. Προσπαθήστε ξανά.";
+                    current_question_number = 10;
+                    user.remove_answer(2);
+                }
+                else if (question_list.Count(f => f == false) == 1 && time_delay == 1)
                 {
                     ((Button)sender).Content = "Επανάληψη";
                     info_message.Severity = InfoBarSeverity.Error;
