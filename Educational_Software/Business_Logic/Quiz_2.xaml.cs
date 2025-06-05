@@ -26,7 +26,7 @@ namespace Educational_Software.Navigation_UI_Pages
         List<Boolean> question_list = new List<Boolean>();
         DateTime dateTime1;
         int time_delay = 0;
-        int answer_timer = 10;
+        int answer_timer = 4;
 
         public Quiz_2()
         {
